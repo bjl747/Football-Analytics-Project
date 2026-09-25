@@ -90,6 +90,17 @@ def calibrate(pbp: pd.DataFrame, games: pd.DataFrame | None = None) -> dict:
     return cal
 
 
+def drive_outcome_by_yardline(pbp: pd.DataFrame) -> dict:
+    """P(drive ends in TD / FG / opp TD / safety) given a 1st down at each field
+    position (10-yard buckets of yards-to-goal). Used by live pricing."""
+    p = pbp[(pbp["down"] == 1) & pbp["yardline_100"].notna() & pbp["fixed_drive_result"].notna() & (pbp["qtr"] <= 4)]
+    res = p["fixed_drive_result"]
+    b = (p["yardline_100"].clip(1, 99) // 10).astype(int)
+    t = pd.DataFrame({"td": res.eq("Touchdown"), "fg": res.eq("Field goal"),
+                      "opp_td": res.eq("Opp touchdown"), "safety": res.eq("Safety"), "b": b}).groupby("b").mean()
+    return {"buckets": [int(i) for i in t.index], "rates": t[OUTCOMES].round(4).values.tolist()}
+
+
 def save(cal: dict, path: Path = DEFAULT_PATH) -> None:
     Path(path).write_text(json.dumps(cal, indent=2))
 

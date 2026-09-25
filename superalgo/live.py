@@ -28,16 +28,18 @@ def drives_remaining(seconds_remaining: float, drives_per_game: float = 21.8) ->
 
 def live_price(sim: GameSimulator, home_exp_pts: float, away_exp_pts: float,
                home_score: int, away_score: int, seconds_remaining: float,
-               home_has_ball: bool, n_sims: int = 10000) -> SimResult:
+               home_has_ball: bool, n_sims: int = 10000,
+               yardline_100: float | None = None) -> SimResult:
     """Price the rest of a game from its current state.
 
-    Field position within the current drive is not yet used. Adding the EP
-    model's value of the current possession is a planned refinement.
+    ``yardline_100`` (yards to the goal line for the team with the ball) makes
+    the drive in progress use field-position scoring odds.
     """
     dr = drives_remaining(seconds_remaining, sim.cal["drives_per_game_mean"])
     state = GameState(home_score=home_score, away_score=away_score,
-                      drives_remaining=dr, home_has_ball=home_has_ball,
-                      seconds_remaining=seconds_remaining)
+                      drives_remaining=max(dr, 1.0 if yardline_100 is not None else 0.0),
+                      home_has_ball=home_has_ball, seconds_remaining=seconds_remaining,
+                      yardline_100=yardline_100)
     old = sim.use_key_numbers
     sim.use_key_numbers = False  # key-number weights are for full-game pricing
     r = sim.simulate(home_exp_pts, away_exp_pts, n_sims=n_sims, state=state)

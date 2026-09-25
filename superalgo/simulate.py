@@ -39,6 +39,7 @@ class GameState:
     drives_remaining: float | None = None   # None = full game
     home_has_ball: bool | None = None       # None = coin toss
     seconds_remaining: float = 3600.0
+    yardline_100: float | None = None      # yards to goal for the team with the ball (live)
 
 
 @dataclass
@@ -189,10 +190,21 @@ class GameSimulator:
         else:
             home_ball = np.full(n, state.home_has_ball)
 
+        fp = self.cal.get("drive_by_yardline")
         for j in range(int(drives.max()) if n else 0):
             active = j < drives
             late = dual_state & (j >= drives - late_n)
             off_rates = np.where(home_ball[:, None], h_rates, a_rates)
+            if j == 0 and state.yardline_100 is not None and fp:
+                # the drive in progress: league odds from this field position,
+                # scaled by how good this offence is relative to average
+                b = int(np.clip(state.yardline_100 // 10, 0, 9))
+                base = np.array(fp["rates"][fp["buckets"].index(b)] if b in fp["buckets"] else fp["rates"][-1])
+                ppd = np.where(home_ball, h_eff, a_eff)
+                k = np.clip(ppd / 2.0, 0.6, 1.5)[:, None]
+                off_rates = np.column_stack([base[0] * k[:, 0], base[1] * k[:, 0],
+                                             np.full(n, base[2]), np.full(n, base[3])])
+                off_rates[:, :2] = np.minimum(off_rates[:, :2], 0.95)
             diff = np.where(home_ball, home - away, away - home)
             b = np.clip(np.searchsorted(BUCKETS, diff, side="left") - 1, 0, len(BUCKET_LABELS) - 1)
             rates = np.where(late[:, None], off_rates * self.late_mult[b], off_rates)

@@ -30,6 +30,18 @@ likely outcomes, betting advice). Player performance comes second.
 - [ ] College EP/EPA: use CFBD's free PPA (their EPA) at first (`cfb.py`)
 - [ ] Tracking data (NGS): not available to the public; skipped
 
+### Round 2 upgrades (engine v2, see RESEARCH_LOG.md)
+- [x] Kalman-filter dynamic ratings for 22 stats (state-space, Glickman & Stern style), fitted by maximum likelihood
+- [x] Luck-stripped stats: fumble luck, turnover-free EPA, field-goal luck, early-down EPA, pass/rush split
+- [x] Market-memory ratings from past closing lines
+- [x] Injury burden by position group (free injury reports plus snap counts): the "depth chart moves the spread" piece
+- [x] Live QB-injury news watcher (ESPN feed), which reprices games before books adjust
+- [x] Situational edges that passed holdout: bye-week favourites, primetime unders, Wong teasers
+- [x] Line-movement ("bet now") signal: the model predicts where lines move
+- [x] Live in-game tracker on ESPN's free scoreboard, with field-position drive odds
+- [x] Historical opening lines (2010–2021 archive plus 2024–25 ESPN) for honest early-line tests
+- [x] Weather forecasts (Open-Meteo) replace observed weather, which was a leak
+
 ### Layer 2: Power ratings and adjustments
 - [x] Least-squares ratings via the normal equation, with a Bayesian prior and
       an automatically decaying prior weight (`ratings.py`)
