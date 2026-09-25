@@ -37,6 +37,18 @@ See [`docs/PLAN.md`](docs/PLAN.md) for the full build plan, what's done, and cos
   line for spreads and takes only the edges that passed both test periods.
 - Full experiment write-ups: [`docs/RESEARCH_LOG.md`](docs/RESEARCH_LOG.md).
 - Where to get live weekly data (mostly free): [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md).
+- What to run each day of the week: [`docs/WEEKLY_RUNBOOK.md`](docs/WEEKLY_RUNBOOK.md).
+
+## Edges that survived testing (out of sample)
+
+| Edge | Evidence |
+|---|---|
+| **Bet early when the model disagrees with the opening line** | Line moves our way 59% of the time (+0.5 pts of closing line value) in 2024–25 |
+| **React to QB injury news before the books** (`news_watch.py`) | Lines move our way 70–79% of the time (+1.1 to +1.7 pts) when news is in the model first |
+| **Weather unders** (forecast wind 10+ mph, gusts 25+, rain) | 60–74% unders in 2022–25 |
+| **Fade home favourites off a bye** | 54.8% (2012–22), 59.4% (2023–25) |
+| **Wong teasers through 3 and 7** | 75.5% / 74.4% per leg (needs ~73.9%) |
+| **Primetime unders** | 52.8% / 55.1% |
 
 ## Sample output
 

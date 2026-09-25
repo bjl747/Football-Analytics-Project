@@ -16,23 +16,33 @@ RULES = {
     "primetime": {"total": -0.4},
 }
 
-# forecast-wind adjustment to the total (points), outdoor games only.
-# Set from the 2022-2025 archived-forecast test; see RESEARCH_LOG experiment 7.
-WIND_TOTAL_ADJ = [(0, 9, 0.0), (10, 14, -1.0), (15, 19, -1.5), (20, 99, -1.0)]
+# Weather adjustments to the total (points), outdoor games only, from game-time
+# FORECASTS (RESEARCH_LOG experiment 7, 2022-2025, 748 games), shrunk ~70%:
+#   wind 10-14 mph: 60.3% unders, -1.9 pts vs close; gusts 25+: 66.7%, -2.8;
+#   rain >= 2mm: 74% unders, -6.2 (small sample, shrunk harder)
+WIND_TOTAL_ADJ = [(0, 9, 0.0), (10, 14, -1.3), (15, 19, -1.3), (20, 99, -1.0)]
+GUST_ADJ = (25.0, -1.0)     # extra when forecast gusts >= 25 mph
+RAIN_ADJ = (2.0, -2.0)      # when >= 2mm of rain is forecast during the game
 
 
 def adjustments(home_rest: float, spread_line: float, kick_hour: int,
-                forecast_wind: float | None = None, roof: str | None = None) -> dict:
+                forecast_wind: float | None = None, roof: str | None = None,
+                forecast_gust: float | None = None, forecast_precip: float | None = None) -> dict:
     """Point adjustments to (home margin, total) for the betting view."""
     adj = {"margin": 0.0, "total": 0.0, "flags": []}
     if home_rest is not None and home_rest >= 13 and spread_line is not None and spread_line > 0:
         adj["margin"] += RULES["home_fav_off_bye"]["margin"]; adj["flags"].append("home_fav_off_bye")
     if kick_hour is not None and kick_hour >= 19:
         adj["total"] += RULES["primetime"]["total"]; adj["flags"].append("primetime")
-    if forecast_wind is not None and not np.isnan(forecast_wind) and roof not in ("dome", "closed"):
+    outdoor = roof == "outdoors"
+    if outdoor and forecast_wind is not None and not np.isnan(forecast_wind):
         for lo, hi, v in WIND_TOTAL_ADJ:
-            if lo <= forecast_wind <= hi and v:
+            if lo <= forecast_wind < hi + 1 and v:
                 adj["total"] += v; adj["flags"].append(f"wind_{lo}-{hi}mph")
+    if outdoor and forecast_gust is not None and forecast_gust >= GUST_ADJ[0]:
+        adj["total"] += GUST_ADJ[1]; adj["flags"].append("gusts_25mph+")
+    if outdoor and forecast_precip is not None and forecast_precip >= RAIN_ADJ[0]:
+        adj["total"] += RAIN_ADJ[1]; adj["flags"].append("rain")
     return adj
 
 

@@ -120,7 +120,8 @@ def main():
             wx = game_weather(r.stadium_id, ko)
         model_sim = sim.simulate(r.home_exp, r.away_exp, n_sims=a.sims)
         bh, ba = blend_projection(r.home_exp, r.away_exp, spread, total, W_MARGIN, W_TOTAL)
-        adj = adjustments(r.home_rest, spread, r.kick_hr, wx.get("wind"), wx.get("roof"))
+        adj = adjustments(r.home_rest, spread, r.kick_hr, wx.get("wind"), wx.get("roof"),
+                          wx.get("gust"), wx.get("precip"))
         m_, t_ = bh - ba + adj["margin"], bh + ba + adj["total"]
         bet_sim = sim.simulate((t_ + m_) / 2, (t_ - m_) / 2, n_sims=a.sims)
 

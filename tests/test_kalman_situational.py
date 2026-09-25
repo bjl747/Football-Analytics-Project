@@ -42,7 +42,9 @@ def test_unplayed_games_get_predictions():
 
 
 def test_situational_rules():
-    a = adjustments(home_rest=14, spread_line=6.5, kick_hour=20, forecast_wind=16, roof="outdoors")
+    a = adjustments(home_rest=14, spread_line=6.5, kick_hour=20, forecast_wind=16, roof="outdoors",
+                    forecast_gust=30, forecast_precip=3)
+    assert {"gusts_25mph+", "rain", "wind_15-19mph"} <= set(a["flags"])
     assert a["margin"] < 0 and a["total"] < 0
     assert set(a["flags"]) >= {"home_fav_off_bye", "primetime"}
     assert adjustments(7, -3, 13, 20, "dome")["total"] == 0

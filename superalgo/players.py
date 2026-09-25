@@ -34,13 +34,23 @@ def replacement_level(qbg: pd.DataFrame, max_career_db: int = 150) -> float:
 
 
 def qb_values_asof(qbg: pd.DataFrame, season: int, week: int, repl: float,
-                   prior_db: float = 250.0, season_decay: float = 0.6) -> pd.Series:
-    """Shrunk EPA/dropback for every QB using games strictly before (season, week)."""
+                   prior_db: float = 250.0, season_decay: float = 0.6,
+                   cpoe_weight: float = 0.0, cpoe_scale: float = 1.0) -> pd.Series:
+    """Shrunk EPA/dropback for every QB using games strictly before (season, week).
+
+    With ``cpoe_weight`` > 0 the value blends in shrunk CPOE (completion % over
+    expected, the stickier accuracy stat), converted to EPA units by ``cpoe_scale``.
+    """
     past = qbg[(qbg["season"] < season) | ((qbg["season"] == season) & (qbg["week"] < week))]
     w = season_decay ** (season - past["season"]).clip(lower=0)
     db = (past["dropbacks"] * w).groupby(past["qb_id"]).sum()
     epa = (past["epa"] * w).groupby(past["qb_id"]).sum()
-    return (epa + prior_db * repl) / (db + prior_db)
+    val = (epa + prior_db * repl) / (db + prior_db)
+    if cpoe_weight and "cpoe" in past:
+        att = (past["attempts"] * w).groupby(past["qb_id"]).sum()
+        cp = (past["cpoe"] * w).groupby(past["qb_id"]).sum() / (att + prior_db)
+        val = (1 - cpoe_weight) * val + cpoe_weight * (repl + cpoe_scale * cp.reindex(val.index).fillna(0))
+    return val
 
 
 def team_qb_baseline(qbg: pd.DataFrame, values: pd.Series, season: int, week: int,

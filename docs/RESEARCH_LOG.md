@@ -85,11 +85,25 @@ The ratings didn't beat the closing total on their own: 10.28 vs 10.12 average m
 
 That's an upper bound, because bettors only have the forecast. Experiment 7 below tests it with forecasts.
 
-## Experiment 7: forecast wind vs totals
+## Experiment 7: forecast weather vs the closing total ✅ Adopted
 
-*(see the section below; results are filled in when the archived-forecast download finishes)*
+Archived game-time forecasts from Open-Meteo, 2022–2025, 748 outdoor games. Forecast and observed wind are correlated at 0.70.
 
----
+| Forecast | Games | Went under | Avg vs closing total |
+|---|---|---|---|
+| Wind 0–9 mph | 585 | 50.0% | +0.72 |
+| **Wind 10–14 mph** | 137 | **60.3%** | **−1.90** |
+| Wind 15–19 mph | 23 | 50.0% | −1.24 |
+| **Gusts 25+ mph** | 73 | **66.7%** | **−2.83** |
+| **Rain 2mm+ during the game** | 31 | **74.2%** | **−6.15** |
+| Temp ≤ 32°F | 64 | 51.6% | −1.07 |
+
+Each mph of forecast wind is worth about −0.31 points against the closing total. This agrees with the observed-wind results
+in both 2012–22 and 2023–25 (Experiment 6) and with published research (Borghesi 2007; nflanalytic).
+The totals market underreacts to wind, gusts and rain. The engine applies shrunk adjustments:
+wind 10+ mph −1.0 to −1.3, gusts 25+ −1.0, rain −2.0.
+
+**Caveat:** archived forecasts are short-range (issued close to kickoff), so these edges are for **game-day** betting.
 
 ## Experiment 8: more model weight early in the season? ❌ Not stable
 
@@ -124,10 +138,16 @@ it disagrees) and **speed** (reprice instantly on news). By kickoff the market h
 **Caveats:** the ESPN feed's "open" time isn't documented, and B depends on how fast news reaches the engine.
 Recording our own time-stamped line snapshots is the next validation step.
 
+## Experiment 10: QB value from EPA + CPOE composite ❌ No gain
+
+Blending completion % over expected into QB value (weights 0, 0.3, 0.5) changed holdout error by less than
+0.01 points (10.042 / 10.045 / 10.052). EPA alone stays. CPOE is still stored for the player-props project.
+
 ## What this means for betting
 
 1. **Against NFL closing spreads, public-data models have no reliable edge in recent seasons.** Our improvements make the *predictions* better, but the closing line already knows what we know. The engine therefore leans on the market (90% market, 10% model) for spreads.
-2. **The edges that survived** are structural: bye-week favourites, teasers through key numbers, primetime and wind unders, and line shopping across books.
+2. **The edges that survived** are structural: bye-week favourites, teasers through key numbers, primetime unders,
+   **weather unders (wind, gusts, rain)**, and line shopping across books.
 3. **Early lines and fast news are where the model beats the market.** Betting at the open earns about
    +0.5 points of closing line value on the holdout. Reacting instantly to QB and injury news earns +1 to +1.7
    (Experiment 9). Weekly output includes an `early_line_signal`.
