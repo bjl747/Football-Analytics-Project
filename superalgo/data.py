@@ -45,3 +45,21 @@ def load_games(refresh: bool = False) -> pd.DataFrame:
     """
     games = pd.read_csv(_cached(GAMES_URL, "games.csv", refresh))
     return games
+
+
+INJ_URL = "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_{season}.parquet"
+SNAP_URL = "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_{season}.parquet"
+
+
+def load_injuries(seasons, refresh: bool = False) -> pd.DataFrame:
+    """Official weekly injury reports (Out / Doubtful / Questionable)."""
+    seasons = [seasons] if isinstance(seasons, int) else seasons
+    return pd.concat([pd.read_parquet(_cached(INJ_URL.format(season=s), f"injuries_{s}.parquet", refresh))
+                      for s in seasons], ignore_index=True)
+
+
+def load_snaps(seasons, refresh: bool = False) -> pd.DataFrame:
+    """Snap counts per player per game (from Pro Football Reference)."""
+    seasons = [seasons] if isinstance(seasons, int) else seasons
+    return pd.concat([pd.read_parquet(_cached(SNAP_URL.format(season=s), f"snaps_{s}.parquet", refresh))
+                      for s in seasons], ignore_index=True)

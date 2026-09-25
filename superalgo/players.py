@@ -19,8 +19,10 @@ import pandas as pd
 def qb_game_table(pbp: pd.DataFrame, epa_col: str = "qb_epa") -> pd.DataFrame:
     """Dropbacks and total EPA per QB per game."""
     d = pbp[(pbp["qb_dropback"] == 1) & pbp["id"].notna() & pbp[epa_col].notna()]
+    d = d.assign(cpoe_v=d["cpoe"].fillna(0) / 100.0, cpoe_n=d["cpoe"].notna().astype(float))
     t = d.groupby(["game_id", "season", "week", "posteam", "id"]).agg(
-        dropbacks=(epa_col, "size"), epa=(epa_col, "sum")).reset_index()
+        dropbacks=(epa_col, "size"), epa=(epa_col, "sum"),
+        cpoe=("cpoe_v", "sum"), attempts=("cpoe_n", "sum")).reset_index()
     return t.rename(columns={"posteam": "team", "id": "qb_id"})
 
 

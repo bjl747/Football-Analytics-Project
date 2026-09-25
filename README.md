@@ -8,39 +8,35 @@ See [`docs/PLAN.md`](docs/PLAN.md) for the full build plan, what's done, and cos
 
 ## What it does, in plain terms
 
-1. **Scores every play** (Expected Points Added). A machine-learning model learns
-   how many points a team can expect from any situation, such as 3rd and 5 at
-   midfield with 2 minutes left. Every play is graded by how much it helped or hurt.
-2. **Rates every team** by combining three views: points scored and allowed,
-   play-by-play efficiency (with garbage time removed), and what the betting market
-   has said about them in past weeks. The maths adjusts for strength of schedule
-   and starts each season from a regressed version of last season's rating.
-3. **Adjusts for quarterbacks.** If a backup starts, the projection moves.
-4. **Plays each game 20,000 times** drive by drive, including how teams really
-   behave late in blowouts, which creates "backdoor covers." It's tuned so final
-   margins land on 3 and 7 as often as they do in real NFL games.
-5. **Compares against the sportsbooks** and suggests only bets where our chance
-   of winning is clearly better than the price, sized with quarter-Kelly
-   (a cautious, bankroll-protecting formula).
+1. **Scores every play** with our own machine-learning Expected Points model.
+2. **Tracks every team as a moving target.** A Kalman filter (the maths behind GPS
+   tracking) follows each team's offence and defence across 22 stats, week by week.
+   It learns how "sticky" each stat really is. Fumble luck and field-goal luck
+   turn out to be almost pure noise; passing efficiency is real.
+3. **Remembers what the betting market believed** about each team in past weeks.
+4. **Adjusts for the people on the field**: quarterback changes (EPA plus completion
+   percentage over expected), injured starters by position group, rest and byes,
+   and cross-country travel.
+5. **Plays each game 20,000 times**, drive by drive, calibrated so margins land on 3
+   and 7 as often as real NFL games do.
+6. **Gives betting advice** only where it has held up out of sample: sportsbook lines
+   are the anchor, plus the situational edges that survived testing (bye-week
+   favourites, primetime and wind unders, teasers through 3 and 7), sized with quarter-Kelly.
 
-## Honest results (tested on 855 real games, 2023-2025, never seen in training)
+## Honest results (2023–2025 holdout, 855 games the model never trained on)
 
-| | Our model alone | Vegas closing line |
-|---|---|---|
-| Average miss on final margin | 10.2 pts | 9.8 pts |
-| Average miss on total points | 10.3 pts | 10.1 pts |
+| | Average miss on final margin |
+|---|---|
+| Version 1 engine | 10.21 pts |
+| **Engine v2 (current)** | **10.04 pts** |
+| Vegas closing line | 9.79 pts |
 
-- On its own, the model is close to Vegas but not better. That's normal:
-  closing lines are the sharpest numbers in sports betting.
-- Betting advice therefore uses a **blend** (about 93% market, 7% model for spreads;
-  88/12 for totals). The weights were learned from 2020-2022 data. In the test
-  seasons, blended spread picks went 17-14 (+7% return), which is too few bets to prove anything.
-- Moneyline bets on big underdogs lost money, so the engine no longer recommends them.
-- **Where the real edge likely is (next step):** betting early in the week before
-  lines sharpen, and shopping prices across many sportsbooks. That needs the free
-  odds API key, and we need to collect our own history of early lines to prove it.
-
-Full numbers: [`output/backtest_summary.json`](output/backtest_summary.json).
+- Engine v2 cut the gap to Vegas from 0.43 to 0.26 points.
+- Against *closing* spreads, no public-data model we tested had a reliable edge in
+  2023–2025. The market has gotten much sharper. So the engine leans on the market
+  line for spreads and takes only the edges that passed both test periods.
+- Full experiment write-ups: [`docs/RESEARCH_LOG.md`](docs/RESEARCH_LOG.md).
+- Where to get live weekly data (mostly free): [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md).
 
 ## Sample output
 
@@ -61,8 +57,9 @@ This file is what the apps read.
 ```bash
 pip install -r requirements.txt
 python -m pytest tests                                  # unit tests
-python scripts/run_backtest.py                          # walk-forward backtest (~7 min)
-python scripts/predict_week.py --season 2026 --week 3   # weekly predictions (~1 min)
+python scripts/predict_week.py --season 2026 --week 3   # weekly predictions, engine v2 (~2 min)
+python scripts/run_backtest.py                          # v1 walk-forward backtest (~7 min)
+python research/build_ratings.py && python research/exp5_full_model.py   # v2 research pipeline
 ```
 
 Data downloads automatically into `data/` (set `SUPERALGO_DATA` to change that).
@@ -82,7 +79,14 @@ Data downloads automatically into `data/` (set `SUPERALGO_DATA` to change that).
 | `superalgo/advice.py` | Market evaluation and bet recommendations |
 | `superalgo/market.py` | The Odds API client, sharp consensus, line shopping |
 | `superalgo/cfb.py` | College adapter (CFBD). Written, untested until the key arrives |
-| `superalgo/engine.py` | Ties it together: ratings, projection, simulation, market blend |
+| `superalgo/pipeline.py` | **Engine v2**: Kalman ratings, context, margin and total models |
+| `superalgo/kalman.py` | Dynamic opponent-adjusted Kalman-filter ratings |
+| `superalgo/features.py` | Team-game stats, including luck-stripped versions |
+| `superalgo/injuries.py` | Injury burden from injury reports plus snap counts |
+| `superalgo/situational.py` | Tested situational adjustments and teaser legs |
+| `superalgo/weather.py` | Game-time weather forecasts (Open-Meteo) |
+| `superalgo/engine.py` | Engine v1 (kept for comparison) and the market blend |
+| `research/` | The experiment lab: every test in the research log |
 | `superalgo/backtest.py` | Walk-forward evaluation against closing lines |
 
 *Responsible use: this is a probabilistic model. Even real edges lose often in the short run. Never bet more than you can afford to lose.*

@@ -1,0 +1,111 @@
+# Research log: making the engine smarter
+
+Every idea was tested the same way, so we don't fool ourselves:
+
+- **Development:** seasons 2012–2022, leave-one-season-out. The model never sees the season it's predicting.
+- **Holdout:** seasons 2023–2025, checked only for finalists. An idea counts only if it works in **both**.
+- **Break-even:** a spread bet at standard -110 odds needs a **52.4%** win rate.
+
+Scripts live in `research/` (`exp1`–`exp6`). Outside research came from two research
+passes covering nfelo, Open Source Football, FTN/DVOA, ESPN FPI, SP+, Glickman & Stern's
+state-space papers, Moskowitz (Journal of Finance 2021), a 2024 academic rest-effect paper,
+Action Network, Unexpected Points and Pinnacle/Buchdahl. Reddit itself blocks automated
+readers, so community ideas came secondhand.
+
+---
+
+## New building blocks
+
+| Block | What's new vs. version 1 |
+|---|---|
+| **Kalman-filter ratings** (`superalgo/kalman.py`) | Each team's offence and defence rating in 22 different stats is tracked as a moving target: week-to-week drift plus offseason regression. The filter learns each stat's own stability. For example, field-goal luck got near-zero carry-over, which confirms it's noise. |
+| **Luck-stripped stats** (`superalgo/features.py`) | Fumble-luck-adjusted EPA, turnover-free EPA, early-down EPA, pass vs rush EPA, CPOE, pass rate over expected, explosive rate, special-teams EPA, field-goal luck, red-zone TD rate, pace |
+| **Market memory** | The same Kalman filter run on past closing lines: what the betting market has believed about each team |
+| **QB model with CPOE** (`superalgo/players.py`) | Starter vs. usual-starter value, shrunk toward replacement level |
+| **Injury burden** (`superalgo/injuries.py`) | Snap share lost to Out/Doubtful players, by position group, from free injury reports plus snap counts |
+| **Context** | Rest and byes, time-zone travel, West Coast teams in early games, divisional games, playoffs |
+| **Opening lines** | 2010–2021 from the sportsbookreviewsonline archive and 2024–2025 from ESPN's odds feed (the free sources don't cover 2022–2023). This finally lets us test against lines you could bet early in the week. |
+
+---
+
+## Experiment 1: which stats predict margins? (dev)
+
+| Inputs | Avg miss (pts) | Wins vs closing line when disagreeing by 3+ |
+|---|---|---|
+| Points ratings only | 10.27 | 51.8% |
+| EPA only | 10.35 | 49.0% |
+| Luck-adjusted EPA | 10.34 | 50.1% |
+| All 21 performance stats | 10.31 | 51.8% |
+| **Market memory only** | 10.20 | 53.7% |
+| All + market memory | 10.20 | 54.8% |
+
+On their own, the performance stats (EPA and the rest) add almost nothing beyond points ratings for predicting margins. Market memory is the strongest single input.
+
+## Experiment 2: does the market overreact? ❌ Failed holdout
+
+When this week's closing line strayed 3+ points from the market's own smoothed history, betting back toward that history won **56.1%** in 2012–2022 but **47.3%** in 2023–2025. The effect is real in older data but has disappeared recently. **Not used for betting.**
+
+## Experiment 3: beat the opening line / predict line movement ❌ Failed holdout
+
+- The model's disagreement with the opening line predicts **which way the line will move 57–58% of the time**, correlation 0.33. That's genuine information.
+- Against the opening line it won **54–64%** in 2012–2021 but **46–52%** in 2024–2025.
+- **Conclusion:** the NFL market has become much sharper since about 2023. Keep monitoring it with our own opening-line snapshots (see DATA_SOURCES.md).
+
+## Experiment 4: situational edges (23 rules tested)
+
+| Rule | 2012–2022 | 2023–2025 | Verdict |
+|---|---|---|---|
+| **Fade home favourites coming off a bye** | 54.8% (155) | 59.4% (32) | ✅ Used (matches a 2024 academic finding that the market overprices byes) |
+| **Primetime unders** | 52.8% (593) | 55.1% (187) | ✅ Used, small |
+| **Wong teasers** (6-point legs through 3 and 7) | 75.5% per leg | 74.4% per leg | ✅ Flagged. Break-even is ~73.9% at -120; totals ≤49 do better (77.1% / 75.4%) |
+| Backup-QB spots, divisional dogs, late-season unders, West Coast early games, home dogs, dome overs… | mixed | failed | ❌ Not used |
+
+We tested 23 rules, so about one could pass by pure luck. The bye and teaser results have independent outside evidence behind them, which is why we trust them more.
+
+## Experiment 5: best pure prediction model
+
+On the **2023–2025 holdout** (855 games):
+
+| Model | Avg miss on margin |
+|---|---|
+| Version 1 engine | 10.21 |
+| Points ratings only (Kalman) | 10.26 |
+| **Engine v2: market memory + points + QB + injuries + rest/travel (Ridge)** | **10.04** |
+| Vegas closing line | 9.79 |
+
+**Engine v2 cut the gap to Vegas from 0.43 to 0.26 points**, using only information available before each game. Gradient boosting (XGBoost) did no better than the simpler Ridge model.
+
+## Experiment 6: totals
+
+The ratings didn't beat the closing total on their own: 10.28 vs 10.12 average miss on the holdout.
+
+**Wind is the exception.** Using wind measured during the game:
+- games with **10–19 mph wind went under 56–58%** in both periods;
+- calm games went over 55% in 2023–2025.
+
+That's an upper bound, because bettors only have the forecast. Experiment 7 below tests it with forecasts.
+
+## Experiment 7: forecast wind vs totals
+
+*(see the section below; results are filled in when the archived-forecast download finishes)*
+
+---
+
+## Experiment 8: more model weight early in the season? ❌ Not stable
+
+The best model weight for weeks 1–4 was 6% in 2012–2022 but 71% in 2023–2025; other week bands also flip.
+That's noise, not a pattern, so the engine keeps one fixed weight.
+
+## What this means for betting
+
+1. **Against NFL closing spreads, public-data models have no reliable edge in recent seasons.** Our improvements make the *predictions* better, but the closing line already knows what we know. The engine therefore leans on the market (90% market, 10% model) for spreads.
+2. **The edges that survived** are structural: bye-week favourites, teasers through key numbers, primetime and wind unders, and line shopping across books.
+3. **Early lines are where a model can beat the market.** The engine predicts line movement, but the recent holdout says it isn't enough yet. We need our own opening-line history to keep testing, which is free with daily ESPN/Kalshi snapshots.
+4. **College football is likely softer**, per the research (thin Group-of-Five markets). It needs the CFBD key.
+
+## Ideas queued for the next rounds
+- A joint Kalman filter that treats the closing line as a second observation (Glickman & Stern style)
+- Adaptive market-blend weight by recent model-vs-market error (nfelo-style); the week-of-season version failed (Exp 8)
+- Interception and penalty luck adjustments (nfelo WEPA), plus pressure-rate stability from FTN participation data
+- Weather forecasts pulled 24–48 hours before kickoff, when lines are still soft
+- College: SP+-style preseason prior (returning production 66/19/15 weighting plus recruiting)

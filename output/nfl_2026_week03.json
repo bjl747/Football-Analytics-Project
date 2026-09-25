@@ -2,488 +2,572 @@
   "league": "NFL",
   "season": 2026,
   "week": 3,
-  "generated_utc": "2026-09-25T00:46:59+00:00",
-  "notes": "model = pure Super-Algo projection; betting_view = model blended with market (model weight 7% spread / 12% total), which is what the advice is priced from.",
+  "engine": "v2 (Kalman)",
+  "generated_utc": "2026-09-25T01:40:18+00:00",
   "power_index": [
     {
-      "rank": 1,
-      "team": "SEA",
-      "index": 8.24,
-      "points_rating": 10.66,
-      "offense": 3.39,
-      "defense": 7.27,
-      "market_rating": 2.92,
-      "adj_epa_off": 0.039,
-      "adj_epa_def": 0.128
-    },
-    {
-      "rank": 2,
-      "team": "LA",
-      "index": 6.26,
-      "points_rating": 5.75,
-      "offense": 2.23,
-      "defense": 3.52,
-      "market_rating": 4.02,
-      "adj_epa_off": 0.097,
-      "adj_epa_def": 0.051
-    },
-    {
-      "rank": 3,
-      "team": "SF",
-      "index": 5.77,
-      "points_rating": 8.65,
-      "offense": 4.04,
-      "defense": 4.61,
-      "market_rating": 1.89,
-      "adj_epa_off": 0.102,
-      "adj_epa_def": -0.008
-    },
-    {
-      "rank": 4,
-      "team": "BUF",
-      "index": 5.11,
-      "points_rating": 4.8,
-      "offense": 7.31,
-      "defense": -2.52,
-      "market_rating": 4.04,
-      "adj_epa_off": 0.123,
-      "adj_epa_def": -0.016
-    },
-    {
-      "rank": 5,
-      "team": "NE",
-      "index": 4.7,
-      "points_rating": 6.24,
-      "offense": -0.03,
-      "defense": 6.28,
-      "market_rating": 1.67,
-      "adj_epa_off": 0.027,
-      "adj_epa_def": 0.064
-    },
-    {
-      "rank": 6,
-      "team": "JAX",
-      "index": 4.57,
-      "points_rating": 5.2,
-      "offense": 2.59,
-      "defense": 2.61,
-      "market_rating": 1.24,
-      "adj_epa_off": 0.053,
-      "adj_epa_def": 0.061
-    },
-    {
-      "rank": 7,
-      "team": "KC",
-      "index": 4.24,
-      "points_rating": 4.63,
-      "offense": 2.06,
-      "defense": 2.58,
-      "market_rating": 2.7,
-      "adj_epa_off": 0.059,
-      "adj_epa_def": 0.025
-    },
-    {
-      "rank": 8,
-      "team": "CHI",
-      "index": 2.79,
-      "points_rating": 3.62,
-      "offense": 4.28,
-      "defense": -0.65,
-      "market_rating": 0.9,
-      "adj_epa_off": 0.06,
-      "adj_epa_def": -0.002
-    },
-    {
-      "rank": 9,
-      "team": "BAL",
-      "index": 2.28,
-      "points_rating": 2.14,
-      "offense": 2.29,
-      "defense": -0.15,
-      "market_rating": 3.19,
-      "adj_epa_off": 0.046,
-      "adj_epa_def": -0.021
-    },
-    {
-      "rank": 10,
-      "team": "MIN",
-      "index": 1.89,
-      "points_rating": 4.3,
-      "offense": -1.32,
-      "defense": 5.62,
-      "market_rating": -0.17,
-      "adj_epa_off": -0.071,
-      "adj_epa_def": 0.082
-    },
-    {
-      "rank": 11,
-      "team": "HOU",
-      "index": 1.86,
-      "points_rating": 1.15,
-      "offense": -1.31,
-      "defense": 2.47,
-      "market_rating": 1.24,
-      "adj_epa_off": -0.027,
-      "adj_epa_def": 0.082
-    },
-    {
-      "rank": 12,
-      "team": "DEN",
-      "index": 1.83,
-      "points_rating": 0.58,
-      "offense": -1.78,
-      "defense": 2.36,
-      "market_rating": 2.32,
-      "adj_epa_off": 0.002,
-      "adj_epa_def": 0.046
-    },
-    {
-      "rank": 13,
       "team": "DET",
-      "index": 1.62,
-      "points_rating": 0.71,
-      "offense": 4.56,
-      "defense": -3.85,
-      "market_rating": 2.36,
-      "adj_epa_off": 0.05,
-      "adj_epa_def": -0.017
+      "results_rating": 4.971,
+      "market_rating": 4.48,
+      "epa_off": 0.084,
+      "pass_epa_off": 0.205,
+      "index": 4.726,
+      "rank": 1
     },
     {
-      "rank": 14,
-      "team": "PHI",
-      "index": 1.6,
-      "points_rating": -0.12,
-      "offense": -1.32,
-      "defense": 1.2,
-      "market_rating": 3.42,
-      "adj_epa_off": -0.02,
-      "adj_epa_def": 0.053
+      "team": "SF",
+      "results_rating": 4.086,
+      "market_rating": 3.836,
+      "epa_off": 0.123,
+      "pass_epa_off": 0.243,
+      "index": 3.961,
+      "rank": 2
     },
     {
-      "rank": 15,
+      "team": "BUF",
+      "results_rating": 4.279,
+      "market_rating": 3.636,
+      "epa_off": 0.114,
+      "pass_epa_off": 0.17,
+      "index": 3.957,
+      "rank": 3
+    },
+    {
+      "team": "BAL",
+      "results_rating": 4.67,
+      "market_rating": 2.829,
+      "epa_off": 0.197,
+      "pass_epa_off": 0.253,
+      "index": 3.749,
+      "rank": 4
+    },
+    {
+      "team": "SEA",
+      "results_rating": 4.443,
+      "market_rating": 1.391,
+      "epa_off": 0.119,
+      "pass_epa_off": 0.21,
+      "index": 2.917,
+      "rank": 5
+    },
+    {
       "team": "GB",
-      "index": 0.13,
-      "points_rating": -2.0,
-      "offense": 0.16,
-      "defense": -2.16,
-      "market_rating": 1.97,
-      "adj_epa_off": 0.027,
-      "adj_epa_def": -0.009
+      "results_rating": 1.711,
+      "market_rating": 2.829,
+      "epa_off": 0.029,
+      "pass_epa_off": 0.129,
+      "index": 2.27,
+      "rank": 6
     },
     {
-      "rank": 16,
-      "team": "IND",
-      "index": -0.25,
-      "points_rating": -0.48,
-      "offense": 4.04,
-      "defense": -4.52,
-      "market_rating": -0.34,
-      "adj_epa_off": 0.05,
-      "adj_epa_def": -0.048
+      "team": "KC",
+      "results_rating": 1.558,
+      "market_rating": 2.093,
+      "epa_off": 0.115,
+      "pass_epa_off": 0.149,
+      "index": 1.826,
+      "rank": 7
     },
     {
-      "rank": 17,
-      "team": "CIN",
-      "index": -0.3,
-      "points_rating": 1.07,
-      "offense": 1.79,
-      "defense": -0.72,
-      "market_rating": -0.44,
-      "adj_epa_off": -0.004,
-      "adj_epa_def": -0.028
+      "team": "HOU",
+      "results_rating": 2.428,
+      "market_rating": 1.021,
+      "epa_off": 0.026,
+      "pass_epa_off": 0.094,
+      "index": 1.725,
+      "rank": 8
     },
     {
-      "rank": 18,
-      "team": "CAR",
-      "index": -1.07,
-      "points_rating": -0.33,
-      "offense": 2.36,
-      "defense": -2.7,
-      "market_rating": -2.3,
-      "adj_epa_off": -0.008,
-      "adj_epa_def": -0.005
+      "team": "LA",
+      "results_rating": 0.566,
+      "market_rating": 1.723,
+      "epa_off": 0.05,
+      "pass_epa_off": 0.061,
+      "index": 1.145,
+      "rank": 9
     },
     {
-      "rank": 19,
-      "team": "NO",
-      "index": -1.5,
-      "points_rating": -0.3,
-      "offense": -1.22,
-      "defense": 0.92,
-      "market_rating": -3.26,
-      "adj_epa_off": -0.044,
-      "adj_epa_def": 0.022
-    },
-    {
-      "rank": 20,
-      "team": "DAL",
-      "index": -1.51,
-      "points_rating": -1.55,
-      "offense": 2.99,
-      "defense": -4.54,
-      "market_rating": 0.68,
-      "adj_epa_off": 0.071,
-      "adj_epa_def": -0.13
-    },
-    {
-      "rank": 21,
-      "team": "PIT",
-      "index": -1.65,
-      "points_rating": -2.17,
-      "offense": -3.2,
-      "defense": 1.03,
-      "market_rating": 0.1,
-      "adj_epa_off": -0.058,
-      "adj_epa_def": 0.015
-    },
-    {
-      "rank": 22,
-      "team": "TB",
-      "index": -1.8,
-      "points_rating": -2.78,
-      "offense": 0.08,
-      "defense": -2.86,
-      "market_rating": 0.4,
-      "adj_epa_off": -0.017,
-      "adj_epa_def": -0.027
-    },
-    {
-      "rank": 23,
-      "team": "LAC",
-      "index": -1.83,
-      "points_rating": -4.58,
-      "offense": -3.66,
-      "defense": -0.92,
-      "market_rating": 1.54,
-      "adj_epa_off": -0.033,
-      "adj_epa_def": 0.008
-    },
-    {
-      "rank": 24,
-      "team": "ARI",
-      "index": -2.54,
-      "points_rating": -2.73,
-      "offense": -1.36,
-      "defense": -1.37,
-      "market_rating": -2.67,
-      "adj_epa_off": -0.013,
-      "adj_epa_def": -0.022
-    },
-    {
-      "rank": 25,
       "team": "NYG",
-      "index": -3.19,
-      "points_rating": -3.07,
-      "offense": -2.2,
-      "defense": -0.87,
-      "market_rating": -2.49,
-      "adj_epa_off": -0.014,
-      "adj_epa_def": -0.051
+      "results_rating": 1.309,
+      "market_rating": 0.641,
+      "epa_off": 0.068,
+      "pass_epa_off": 0.13,
+      "index": 0.975,
+      "rank": 10
     },
     {
-      "rank": 26,
-      "team": "LV",
-      "index": -3.29,
-      "points_rating": -1.74,
-      "offense": -2.49,
-      "defense": 0.75,
-      "market_rating": -3.15,
-      "adj_epa_off": -0.095,
-      "adj_epa_def": 0.006
+      "team": "CIN",
+      "results_rating": 0.495,
+      "market_rating": 0.759,
+      "epa_off": -0.001,
+      "pass_epa_off": -0.012,
+      "index": 0.627,
+      "rank": 11
     },
     {
-      "rank": 27,
-      "team": "WAS",
-      "index": -3.92,
-      "points_rating": -5.68,
-      "offense": -1.86,
-      "defense": -3.82,
-      "market_rating": -1.06,
-      "adj_epa_off": 0.013,
-      "adj_epa_def": -0.085
+      "team": "MIN",
+      "results_rating": 0.13,
+      "market_rating": 0.228,
+      "epa_off": -0.021,
+      "pass_epa_off": 0.023,
+      "index": 0.179,
+      "rank": 12
     },
     {
-      "rank": 28,
-      "team": "ATL",
-      "index": -5.42,
-      "points_rating": -7.79,
-      "offense": -5.89,
-      "defense": -1.91,
-      "market_rating": -2.9,
-      "adj_epa_off": -0.081,
-      "adj_epa_def": 0.004
+      "team": "NE",
+      "results_rating": -1.496,
+      "market_rating": 1.781,
+      "epa_off": 0.012,
+      "pass_epa_off": 0.072,
+      "index": 0.143,
+      "rank": 13
     },
     {
-      "rank": 29,
+      "team": "DAL",
+      "results_rating": -0.263,
+      "market_rating": 0.295,
+      "epa_off": 0.072,
+      "pass_epa_off": 0.126,
+      "index": 0.016,
+      "rank": 14
+    },
+    {
+      "team": "CHI",
+      "results_rating": 0.2,
+      "market_rating": -0.397,
+      "epa_off": 0.009,
+      "pass_epa_off": 0.036,
+      "index": -0.099,
+      "rank": 15
+    },
+    {
+      "team": "PIT",
+      "results_rating": -0.611,
+      "market_rating": 0.375,
+      "epa_off": -0.045,
+      "pass_epa_off": -0.003,
+      "index": -0.118,
+      "rank": 16
+    },
+    {
+      "team": "PHI",
+      "results_rating": -0.428,
+      "market_rating": 0.053,
+      "epa_off": 0.0,
+      "pass_epa_off": 0.048,
+      "index": -0.187,
+      "rank": 17
+    },
+    {
+      "team": "CAR",
+      "results_rating": 0.095,
+      "market_rating": -0.498,
+      "epa_off": -0.024,
+      "pass_epa_off": -0.04,
+      "index": -0.202,
+      "rank": 18
+    },
+    {
+      "team": "JAX",
+      "results_rating": -1.522,
+      "market_rating": 0.58,
+      "epa_off": -0.023,
+      "pass_epa_off": 0.002,
+      "index": -0.471,
+      "rank": 19
+    },
+    {
+      "team": "LAC",
+      "results_rating": -1.447,
+      "market_rating": 0.393,
+      "epa_off": -0.023,
+      "pass_epa_off": 0.015,
+      "index": -0.527,
+      "rank": 20
+    },
+    {
+      "team": "IND",
+      "results_rating": 0.872,
+      "market_rating": -2.703,
+      "epa_off": -0.058,
+      "pass_epa_off": -0.051,
+      "index": -0.915,
+      "rank": 21
+    },
+    {
+      "team": "NO",
+      "results_rating": -0.801,
+      "market_rating": -1.133,
+      "epa_off": -0.063,
+      "pass_epa_off": 0.009,
+      "index": -0.967,
+      "rank": 22
+    },
+    {
+      "team": "DEN",
+      "results_rating": -1.707,
+      "market_rating": -0.686,
+      "epa_off": -0.022,
+      "pass_epa_off": 0.032,
+      "index": -1.197,
+      "rank": 23
+    },
+    {
       "team": "NYJ",
-      "index": -5.62,
-      "points_rating": -4.54,
-      "offense": -3.88,
-      "defense": -0.66,
-      "market_rating": -4.23,
-      "adj_epa_off": -0.092,
-      "adj_epa_def": -0.044
+      "results_rating": -0.855,
+      "market_rating": -1.854,
+      "epa_off": -0.037,
+      "pass_epa_off": -0.03,
+      "index": -1.354,
+      "rank": 24
     },
     {
-      "rank": 30,
-      "team": "CLE",
-      "index": -5.65,
-      "points_rating": -5.71,
-      "offense": -5.07,
-      "defense": -0.64,
-      "market_rating": -4.54,
-      "adj_epa_off": -0.143,
-      "adj_epa_def": 0.035
+      "team": "TB",
+      "results_rating": -3.215,
+      "market_rating": -0.009,
+      "epa_off": -0.112,
+      "pass_epa_off": -0.083,
+      "index": -1.612,
+      "rank": 25
     },
     {
-      "rank": 31,
+      "team": "ARI",
+      "results_rating": -2.602,
+      "market_rating": -2.141,
+      "epa_off": 0.022,
+      "pass_epa_off": 0.054,
+      "index": -2.372,
+      "rank": 26
+    },
+    {
+      "team": "LV",
+      "results_rating": -3.035,
+      "market_rating": -1.778,
+      "epa_off": -0.11,
+      "pass_epa_off": -0.076,
+      "index": -2.407,
+      "rank": 27
+    },
+    {
+      "team": "ATL",
+      "results_rating": -2.382,
+      "market_rating": -2.525,
+      "epa_off": -0.028,
+      "pass_epa_off": 0.029,
+      "index": -2.453,
+      "rank": 28
+    },
+    {
       "team": "TEN",
-      "index": -6.61,
-      "points_rating": -6.81,
-      "offense": -4.0,
-      "defense": -2.81,
-      "market_rating": -4.91,
-      "adj_epa_off": -0.054,
-      "adj_epa_def": -0.076
+      "results_rating": -2.142,
+      "market_rating": -3.475,
+      "epa_off": -0.0,
+      "pass_epa_off": -0.004,
+      "index": -2.808,
+      "rank": 29
     },
     {
-      "rank": 32,
+      "team": "CLE",
+      "results_rating": -1.618,
+      "market_rating": -4.609,
+      "epa_off": -0.092,
+      "pass_epa_off": -0.08,
+      "index": -3.113,
+      "rank": 30
+    },
+    {
+      "team": "WAS",
+      "results_rating": -4.487,
+      "market_rating": -2.442,
+      "epa_off": -0.1,
+      "pass_epa_off": -0.023,
+      "index": -3.465,
+      "rank": 31
+    },
+    {
       "team": "MIA",
-      "index": -6.73,
-      "points_rating": -7.13,
-      "offense": -3.59,
-      "defense": -3.53,
-      "market_rating": -4.14,
-      "adj_epa_off": -0.046,
-      "adj_epa_def": -0.096
+      "results_rating": -3.204,
+      "market_rating": -4.694,
+      "epa_off": -0.024,
+      "pass_epa_off": 0.016,
+      "index": -3.949,
+      "rank": 32
     }
   ],
   "games": [
     {
       "game_id": "2026_03_ATL_GB",
-      "kickoff": "2026-09-24",
+      "kickoff": "2026-09-24 20:15",
       "home": "GB",
       "away": "ATL",
       "home_qb": "Jordan Love",
       "away_qb": "Michael Penix Jr.",
       "model": {
-        "home_points": 25.4,
-        "away_points": 21.7,
-        "home_win_prob": 0.612,
+        "home_points": 24.8,
+        "away_points": 20.5,
+        "home_win_prob": 0.63,
         "fair_home_spread": -3.0,
-        "fair_total": 47.0,
-        "fair_home_ml": -158,
-        "fair_away_ml": 158,
+        "fair_total": 45.0,
+        "fair_home_ml": -170,
+        "fair_away_ml": 170,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0094
+            "prob": 0.0112
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.009
-          },
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0089
-          },
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0079
+            "prob": 0.0086
           },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0071
+            "prob": 0.0084
+          },
+          {
+            "home": 27,
+            "away": 24,
+            "prob": 0.0081
+          },
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0078
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.15
+        }
       },
       "market": {
         "home_spread": -4.5,
         "total": 43.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 24.2,
-        "away_points": 19.7,
-        "home_win_prob": 0.646
+        "home_points": 23.8,
+        "away_points": 19.4,
+        "home_win_prob": 0.644,
+        "situational_flags": [
+          "primetime"
+        ]
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": []
     },
     {
       "game_id": "2026_03_LAC_BUF",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 13:00",
       "home": "BUF",
       "away": "LAC",
       "home_qb": "Josh Allen",
       "away_qb": "Justin Herbert",
       "model": {
-        "home_points": 29.3,
-        "away_points": 20.9,
-        "home_win_prob": 0.742,
+        "home_points": 27.9,
+        "away_points": 20.3,
+        "home_win_prob": 0.721,
         "fair_home_spread": -7.0,
-        "fair_total": 50.0,
-        "fair_home_ml": -287,
-        "fair_away_ml": 287,
+        "fair_total": 48.0,
+        "fair_home_ml": -259,
+        "fair_away_ml": 259,
         "most_likely_scores": [
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0087
-          },
-          {
-            "home": 30,
-            "away": 27,
-            "prob": 0.0082
+            "prob": 0.0088
           },
           {
             "home": 27,
             "away": 24,
-            "prob": 0.0077
-          },
-          {
-            "home": 27,
-            "away": 20,
-            "prob": 0.0071
+            "prob": 0.0078
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0068
+            "prob": 0.0078
+          },
+          {
+            "home": 27,
+            "away": 20,
+            "prob": 0.0066
+          },
+          {
+            "home": 17,
+            "away": 20,
+            "prob": 0.0062
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": -0.0
+        }
       },
       "market": {
         "home_spread": -7.0,
         "total": 50.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 28.8,
+        "home_points": 28.7,
         "away_points": 21.7,
-        "home_win_prob": 0.722
+        "home_win_prob": 0.716,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": []
     },
     {
       "game_id": "2026_03_CAR_CLE",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 13:00",
       "home": "CLE",
       "away": "CAR",
       "home_qb": "Deshaun Watson",
       "away_qb": "Bryce Young",
       "model": {
-        "home_points": 20.2,
-        "away_points": 21.5,
-        "home_win_prob": 0.464,
-        "fair_home_spread": 2.0,
-        "fair_total": 41.0,
-        "fair_home_ml": 116,
-        "fair_away_ml": -116,
+        "home_points": 19.6,
+        "away_points": 21.4,
+        "home_win_prob": 0.446,
+        "fair_home_spread": 3.0,
+        "fair_total": 40.0,
+        "fair_home_ml": 124,
+        "fair_away_ml": -124,
+        "most_likely_scores": [
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0115
+          },
+          {
+            "home": 17,
+            "away": 20,
+            "prob": 0.0102
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0096
+          },
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0088
+          },
+          {
+            "home": 13,
+            "away": 16,
+            "prob": 0.0077
+          }
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.003
+        }
+      },
+      "market": {
+        "home_spread": 2.5,
+        "total": 42.5,
+        "source": "nflverse posted line"
+      },
+      "weather_forecast": {},
+      "betting_view": {
+        "home_points": 20.0,
+        "away_points": 22.4,
+        "home_win_prob": 0.428,
+        "situational_flags": []
+      },
+      "advice": [],
+      "teaser_legs": [
+        {
+          "team": "CLE",
+          "teased_line": 8.5,
+          "game": "CAR @ CLE",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
+    },
+    {
+      "game_id": "2026_03_NYJ_DET",
+      "kickoff": "2026-09-27 13:00",
+      "home": "DET",
+      "away": "NYJ",
+      "home_qb": "Jared Goff",
+      "away_qb": "Geno Smith",
+      "model": {
+        "home_points": 29.6,
+        "away_points": 19.9,
+        "home_win_prob": 0.77,
+        "fair_home_spread": -8.0,
+        "fair_total": 49.0,
+        "fair_home_ml": -334,
+        "fair_away_ml": 334,
+        "most_likely_scores": [
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0092
+          },
+          {
+            "home": 27,
+            "away": 24,
+            "prob": 0.0081
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0069
+          },
+          {
+            "home": 30,
+            "away": 27,
+            "prob": 0.0068
+          },
+          {
+            "home": 27,
+            "away": 13,
+            "prob": 0.0064
+          }
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.0
+        }
+      },
+      "market": {
+        "home_spread": -6.5,
+        "total": 47.5,
+        "source": "nflverse posted line"
+      },
+      "weather_forecast": {},
+      "betting_view": {
+        "home_points": 27.2,
+        "away_points": 20.4,
+        "home_win_prob": 0.712,
+        "situational_flags": []
+      },
+      "advice": [],
+      "teaser_legs": []
+    },
+    {
+      "game_id": "2026_03_HOU_IND",
+      "kickoff": "2026-09-27 13:00",
+      "home": "IND",
+      "away": "HOU",
+      "home_qb": "Daniel Jones",
+      "away_qb": "C.J. Stroud",
+      "model": {
+        "home_points": 21.0,
+        "away_points": 22.9,
+        "home_win_prob": 0.44,
+        "fair_home_spread": 3.0,
+        "fair_total": 43.0,
+        "fair_home_ml": 127,
+        "fair_away_ml": -127,
         "most_likely_scores": [
           {
             "home": 17,
@@ -491,119 +575,74 @@
             "prob": 0.0111
           },
           {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0106
+            "home": 23,
+            "away": 20,
+            "prob": 0.0095
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0097
+            "prob": 0.0093
           },
           {
-            "home": 10,
-            "away": 13,
-            "prob": 0.0078
+            "home": 20,
+            "away": 17,
+            "prob": 0.009
           },
           {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0072
+            "home": 24,
+            "away": 27,
+            "prob": 0.008
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.002
+        }
       },
       "market": {
-        "home_spread": 2.5,
+        "home_spread": 1.5,
         "total": 42.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 20.0,
-        "away_points": 22.4,
-        "home_win_prob": 0.429
+        "home_points": 20.5,
+        "away_points": 22.1,
+        "home_win_prob": 0.454,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": [
+        {
+          "team": "IND",
+          "teased_line": 7.5,
+          "game": "HOU @ IND",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
     },
     {
-      "game_id": "2026_03_NYJ_DET",
-      "kickoff": "2026-09-27",
-      "home": "DET",
-      "away": "NYJ",
-      "home_qb": "Jared Goff",
-      "away_qb": "Geno Smith",
-      "model": {
-        "home_points": 29.5,
-        "away_points": 19.9,
-        "home_win_prob": 0.763,
-        "fair_home_spread": -8.0,
-        "fair_total": 49.0,
-        "fair_home_ml": -323,
-        "fair_away_ml": 323,
-        "most_likely_scores": [
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0078
-          },
-          {
-            "home": 30,
-            "away": 27,
-            "prob": 0.0068
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0068
-          },
-          {
-            "home": 27,
-            "away": 20,
-            "prob": 0.0065
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0065
-          }
-        ]
-      },
-      "market": {
-        "home_spread": -6.5,
-        "total": 47.5,
-        "source": "nflverse posted line"
-      },
-      "betting_view": {
-        "home_points": 27.2,
-        "away_points": 20.5,
-        "home_win_prob": 0.71
-      },
-      "advice": []
-    },
-    {
-      "game_id": "2026_03_HOU_IND",
-      "kickoff": "2026-09-27",
-      "home": "IND",
-      "away": "HOU",
-      "home_qb": "Daniel Jones",
-      "away_qb": "C.J. Stroud",
+      "game_id": "2026_03_NE_JAX",
+      "kickoff": "2026-09-27 13:00",
+      "home": "JAX",
+      "away": "NE",
+      "home_qb": "Trevor Lawrence",
+      "away_qb": "Drake Maye",
       "model": {
         "home_points": 23.4,
-        "away_points": 22.9,
-        "home_win_prob": 0.516,
-        "fair_home_spread": -1.0,
-        "fair_total": 46.0,
-        "fair_home_ml": -106,
-        "fair_away_ml": 106,
+        "away_points": 22.1,
+        "home_win_prob": 0.54,
+        "fair_home_spread": -2.0,
+        "fair_total": 45.0,
+        "fair_home_ml": -117,
+        "fair_away_ml": 117,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0103
-          },
-          {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0098
+            "prob": 0.01
           },
           {
             "home": 23,
@@ -616,333 +655,66 @@
             "prob": 0.0088
           },
           {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0083
-          }
-        ]
-      },
-      "market": {
-        "home_spread": 1.5,
-        "total": 42.5,
-        "source": "nflverse posted line"
-      },
-      "betting_view": {
-        "home_points": 20.8,
-        "away_points": 22.1,
-        "home_win_prob": 0.464
-      },
-      "advice": []
-    },
-    {
-      "game_id": "2026_03_NE_JAX",
-      "kickoff": "2026-09-27",
-      "home": "JAX",
-      "away": "NE",
-      "home_qb": "Trevor Lawrence",
-      "away_qb": "Drake Maye",
-      "model": {
-        "home_points": 23.0,
-        "away_points": 21.1,
-        "home_win_prob": 0.559,
-        "fair_home_spread": -3.0,
-        "fair_total": 43.0,
-        "fair_home_ml": -127,
-        "fair_away_ml": 127,
-        "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0101
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0101
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0096
-          },
-          {
             "home": 17,
             "away": 20,
-            "prob": 0.0093
+            "prob": 0.0087
           },
           {
-            "home": 27,
-            "away": 24,
-            "prob": 0.007
+            "home": 24,
+            "away": 27,
+            "prob": 0.0074
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.0
+        }
       },
       "market": {
         "home_spread": -3.0,
         "total": 45.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
         "home_points": 24.1,
-        "away_points": 21.2,
-        "home_win_prob": 0.602
+        "away_points": 21.4,
+        "home_win_prob": 0.593,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": []
     },
     {
       "game_id": "2026_03_KC_MIA",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 13:00",
       "home": "MIA",
       "away": "KC",
       "home_qb": "Malik Willis",
       "away_qb": "Patrick Mahomes",
       "model": {
-        "home_points": 19.5,
-        "away_points": 26.4,
-        "home_win_prob": 0.297,
-        "fair_home_spread": 6.0,
-        "fair_total": 45.0,
-        "fair_home_ml": 237,
-        "fair_away_ml": -237,
+        "home_points": 19.9,
+        "away_points": 25.0,
+        "home_win_prob": 0.344,
+        "fair_home_spread": 4.0,
+        "fair_total": 44.0,
+        "fair_home_ml": 191,
+        "fair_away_ml": -191,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0105
+            "prob": 0.0112
           },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.009
-          },
-          {
-            "home": 24,
-            "away": 27,
-            "prob": 0.0083
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0076
-          },
-          {
-            "home": 20,
-            "away": 27,
-            "prob": 0.0072
-          }
-        ]
-      },
-      "market": {
-        "home_spread": 10.5,
-        "total": 45.5,
-        "source": "nflverse posted line"
-      },
-      "betting_view": {
-        "home_points": 17.6,
-        "away_points": 27.9,
-        "home_win_prob": 0.205
-      },
-      "advice": []
-    },
-    {
-      "game_id": "2026_03_TEN_NYG",
-      "kickoff": "2026-09-27",
-      "home": "NYG",
-      "away": "TEN",
-      "home_qb": "Jameis Winston",
-      "away_qb": "Cam Ward",
-      "model": {
-        "home_points": 23.4,
-        "away_points": 19.7,
-        "home_win_prob": 0.615,
-        "fair_home_spread": -3.0,
-        "fair_total": 43.0,
-        "fair_home_ml": -160,
-        "fair_away_ml": 160,
-        "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0107
-          },
-          {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0101
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.009
-          },
-          {
-            "home": 16,
-            "away": 13,
-            "prob": 0.0083
-          },
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0075
-          }
-        ]
-      },
-      "market": {
-        "home_spread": -2.5,
-        "total": 38.5,
-        "source": "nflverse posted line"
-      },
-      "betting_view": {
-        "home_points": 20.8,
-        "away_points": 18.2,
-        "home_win_prob": 0.596
-      },
-      "advice": [
-        {
-          "game": "TEN @ NYG",
-          "market": "moneyline",
-          "selection": "NYG ML",
-          "price": -130.0,
-          "model_prob": 0.5959282261113682,
-          "break_even": 0.5652173913043479,
-          "edge": 0.030710834807020304,
-          "ev_per_unit": 0.05433455388934372,
-          "kelly_stake": 0.006158730014036684,
-          "grade": "C",
-          "book": "posted"
-        }
-      ]
-    },
-    {
-      "game_id": "2026_03_CIN_PIT",
-      "kickoff": "2026-09-27",
-      "home": "PIT",
-      "away": "CIN",
-      "home_qb": "Aaron Rodgers",
-      "away_qb": "Joe Burrow",
-      "model": {
-        "home_points": 23.5,
-        "away_points": 21.7,
-        "home_win_prob": 0.556,
-        "fair_home_spread": -3.0,
-        "fair_total": 45.0,
-        "fair_home_ml": -125,
-        "fair_away_ml": 125,
-        "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0105
+            "prob": 0.0104
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0101
-          },
-          {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0097
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0092
-          },
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0078
-          }
-        ]
-      },
-      "market": {
-        "home_spread": 3.5,
-        "total": 42.5,
-        "source": "nflverse posted line"
-      },
-      "betting_view": {
-        "home_points": 19.8,
-        "away_points": 23.0,
-        "home_win_prob": 0.402
-      },
-      "advice": []
-    },
-    {
-      "game_id": "2026_03_SEA_WAS",
-      "kickoff": "2026-09-27",
-      "home": "WAS",
-      "away": "SEA",
-      "home_qb": "Jayden Daniels",
-      "away_qb": "Drew Lock",
-      "model": {
-        "home_points": 19.7,
-        "away_points": 25.9,
-        "home_win_prob": 0.311,
-        "fair_home_spread": 6.0,
-        "fair_total": 45.0,
-        "fair_home_ml": 221,
-        "fair_away_ml": -221,
-        "most_likely_scores": [
-          {
-            "home": 17,
-            "away": 20,
-            "prob": 0.01
-          },
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0098
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0076
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0074
-          },
-          {
-            "home": 24,
-            "away": 27,
-            "prob": 0.0074
-          }
-        ]
-      },
-      "market": {
-        "home_spread": 7.5,
-        "total": 40.5,
-        "source": "nflverse posted line"
-      },
-      "betting_view": {
-        "home_points": 16.8,
-        "away_points": 24.2,
-        "home_win_prob": 0.27
-      },
-      "advice": []
-    },
-    {
-      "game_id": "2026_03_ARI_SF",
-      "kickoff": "2026-09-27",
-      "home": "SF",
-      "away": "ARI",
-      "home_qb": "Brock Purdy",
-      "away_qb": "Jacoby Brissett",
-      "model": {
-        "home_points": 28.4,
-        "away_points": 18.8,
-        "home_win_prob": 0.767,
-        "fair_home_spread": -8.0,
-        "fair_total": 47.0,
-        "fair_home_ml": -329,
-        "fair_away_ml": 329,
-        "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0084
+            "prob": 0.0079
           },
           {
             "home": 23,
@@ -950,169 +722,479 @@
             "prob": 0.0079
           },
           {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0078
+            "home": 24,
+            "away": 27,
+            "prob": 0.0076
+          }
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": -0.0
+        }
+      },
+      "market": {
+        "home_spread": 10.5,
+        "total": 45.5,
+        "source": "nflverse posted line"
+      },
+      "weather_forecast": {},
+      "betting_view": {
+        "home_points": 17.7,
+        "away_points": 27.7,
+        "home_win_prob": 0.211,
+        "situational_flags": []
+      },
+      "advice": [],
+      "teaser_legs": []
+    },
+    {
+      "game_id": "2026_03_TEN_NYG",
+      "kickoff": "2026-09-27 13:00",
+      "home": "NYG",
+      "away": "TEN",
+      "home_qb": "Jameis Winston",
+      "away_qb": "Cam Ward",
+      "model": {
+        "home_points": 24.4,
+        "away_points": 19.8,
+        "home_win_prob": 0.646,
+        "fair_home_spread": -4.0,
+        "fair_total": 44.0,
+        "fair_home_ml": -182,
+        "fair_away_ml": 182,
+        "most_likely_scores": [
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0107
           },
           {
-            "home": 30,
+            "home": 27,
+            "away": 24,
+            "prob": 0.0083
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.008
+          },
+          {
+            "home": 17,
+            "away": 20,
+            "prob": 0.0077
+          },
+          {
+            "home": 16,
+            "away": 13,
+            "prob": 0.0072
+          }
+        ],
+        "qb_edge": {
+          "home": -0.052,
+          "away": 0.0
+        }
+      },
+      "market": {
+        "home_spread": -2.5,
+        "total": 38.5,
+        "source": "nflverse posted line"
+      },
+      "weather_forecast": {},
+      "betting_view": {
+        "home_points": 20.7,
+        "away_points": 18.0,
+        "home_win_prob": 0.592,
+        "situational_flags": []
+      },
+      "advice": [],
+      "teaser_legs": [
+        {
+          "team": "TEN",
+          "teased_line": 8.5,
+          "game": "TEN @ NYG",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
+    },
+    {
+      "game_id": "2026_03_CIN_PIT",
+      "kickoff": "2026-09-27 13:00",
+      "home": "PIT",
+      "away": "CIN",
+      "home_qb": "Aaron Rodgers",
+      "away_qb": "Joe Burrow",
+      "model": {
+        "home_points": 22.4,
+        "away_points": 21.9,
+        "home_win_prob": 0.512,
+        "fair_home_spread": -1.0,
+        "fair_total": 44.0,
+        "fair_home_ml": -105,
+        "fair_away_ml": 105,
+        "most_likely_scores": [
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0105
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0099
+          },
+          {
+            "home": 17,
+            "away": 20,
+            "prob": 0.0091
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0083
+          },
+          {
+            "home": 24,
             "away": 27,
-            "prob": 0.0066
+            "prob": 0.0081
+          }
+        ],
+        "qb_edge": {
+          "home": 0.004,
+          "away": 0.0
+        }
+      },
+      "market": {
+        "home_spread": 3.5,
+        "total": 42.5,
+        "source": "nflverse posted line"
+      },
+      "weather_forecast": {},
+      "betting_view": {
+        "home_points": 19.7,
+        "away_points": 22.8,
+        "home_win_prob": 0.406,
+        "situational_flags": []
+      },
+      "advice": [],
+      "teaser_legs": []
+    },
+    {
+      "game_id": "2026_03_SEA_WAS",
+      "kickoff": "2026-09-27 13:00",
+      "home": "WAS",
+      "away": "SEA",
+      "home_qb": "Jayden Daniels",
+      "away_qb": "Drew Lock",
+      "model": {
+        "home_points": 19.8,
+        "away_points": 24.9,
+        "home_win_prob": 0.345,
+        "fair_home_spread": 4.0,
+        "fair_total": 44.0,
+        "fair_home_ml": 190,
+        "fair_away_ml": -190,
+        "most_likely_scores": [
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0103
+          },
+          {
+            "home": 17,
+            "away": 20,
+            "prob": 0.0098
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0079
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0079
+          },
+          {
+            "home": 24,
+            "away": 27,
+            "prob": 0.0079
+          }
+        ],
+        "qb_edge": {
+          "home": 0.024,
+          "away": -0.006
+        }
+      },
+      "market": {
+        "home_spread": 7.5,
+        "total": 40.5,
+        "source": "nflverse posted line"
+      },
+      "weather_forecast": {},
+      "betting_view": {
+        "home_points": 16.7,
+        "away_points": 24.0,
+        "home_win_prob": 0.28,
+        "situational_flags": []
+      },
+      "advice": [
+        {
+          "game": "SEA @ WAS",
+          "market": "spread",
+          "selection": "WAS +7.5",
+          "price": -112.0,
+          "model_prob": 0.5615213971496349,
+          "break_even": 0.5283018867924528,
+          "edge": 0.03321951035718207,
+          "ev_per_unit": 0.06287978746180889,
+          "kelly_stake": 0.007006340489306471,
+          "grade": "C",
+          "book": "posted"
+        }
+      ],
+      "teaser_legs": [
+        {
+          "team": "SEA",
+          "teased_line": -1.5,
+          "game": "SEA @ WAS",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
+    },
+    {
+      "game_id": "2026_03_ARI_SF",
+      "kickoff": "2026-09-27 16:05",
+      "home": "SF",
+      "away": "ARI",
+      "home_qb": "Brock Purdy",
+      "away_qb": "Jacoby Brissett",
+      "model": {
+        "home_points": 27.6,
+        "away_points": 18.6,
+        "home_win_prob": 0.76,
+        "fair_home_spread": -7.0,
+        "fair_total": 46.0,
+        "fair_home_ml": -316,
+        "fair_away_ml": 316,
+        "most_likely_scores": [
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0096
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0088
+          },
+          {
+            "home": 27,
+            "away": 24,
+            "prob": 0.0077
+          },
+          {
+            "home": 27,
+            "away": 20,
+            "prob": 0.0064
           },
           {
             "home": 27,
             "away": 13,
-            "prob": 0.0055
+            "prob": 0.0062
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.0
+        }
       },
       "market": {
         "home_spread": -8.5,
         "total": 47.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
         "home_points": 28.0,
         "away_points": 19.5,
-        "home_win_prob": 0.759
+        "home_win_prob": 0.761,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": [
+        {
+          "team": "SF",
+          "teased_line": -2.5,
+          "game": "ARI @ SF",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
     },
     {
       "game_id": "2026_03_MIN_TB",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 16:05",
       "home": "TB",
       "away": "MIN",
       "home_qb": "Baker Mayfield",
       "away_qb": "Kyler Murray",
       "model": {
-        "home_points": 21.4,
-        "away_points": 23.3,
-        "home_win_prob": 0.442,
+        "home_points": 20.7,
+        "away_points": 22.4,
+        "home_win_prob": 0.444,
         "fair_home_spread": 3.0,
-        "fair_total": 44.0,
-        "fair_home_ml": 126,
-        "fair_away_ml": -126,
+        "fair_total": 43.0,
+        "fair_home_ml": 125,
+        "fair_away_ml": -125,
         "most_likely_scores": [
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0107
+            "home": 20,
+            "away": 23,
+            "prob": 0.0105
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0104
+            "prob": 0.0095
           },
           {
-            "home": 20,
-            "away": 23,
-            "prob": 0.009
+            "home": 17,
+            "away": 20,
+            "prob": 0.0089
+          },
+          {
+            "home": 24,
+            "away": 27,
+            "prob": 0.0089
           },
           {
             "home": 23,
             "away": 20,
             "prob": 0.0083
-          },
-          {
-            "home": 24,
-            "away": 27,
-            "prob": 0.0077
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.065
+        }
       },
       "market": {
         "home_spread": 1.5,
         "total": 42.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 20.6,
-        "away_points": 22.1,
-        "home_win_prob": 0.459
+        "home_points": 20.5,
+        "away_points": 22.0,
+        "home_win_prob": 0.46,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": [
+        {
+          "team": "TB",
+          "teased_line": 7.5,
+          "game": "MIN @ TB",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
     },
     {
       "game_id": "2026_03_BAL_DAL",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 16:25",
       "home": "DAL",
       "away": "BAL",
       "home_qb": "Dak Prescott",
       "away_qb": "Lamar Jackson",
       "model": {
-        "home_points": 25.0,
-        "away_points": 27.9,
-        "home_win_prob": 0.414,
+        "home_points": 24.0,
+        "away_points": 25.9,
+        "home_win_prob": 0.44,
         "fair_home_spread": 3.0,
-        "fair_total": 53.0,
-        "fair_home_ml": 142,
-        "fair_away_ml": -142,
+        "fair_total": 49.0,
+        "fair_home_ml": 127,
+        "fair_away_ml": -127,
         "most_likely_scores": [
           {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0083
+            "home": 17,
+            "away": 20,
+            "prob": 0.009
           },
           {
-            "home": 27,
-            "away": 30,
-            "prob": 0.0083
-          },
-          {
-            "home": 24,
-            "away": 27,
-            "prob": 0.0077
+            "home": 23,
+            "away": 20,
+            "prob": 0.0086
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0077
+            "prob": 0.0085
           },
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0074
+            "home": 24,
+            "away": 27,
+            "prob": 0.008
+          },
+          {
+            "home": 27,
+            "away": 24,
+            "prob": 0.0075
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.0
+        }
       },
       "market": {
         "home_spread": 3.5,
         "total": 52.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
         "home_points": 24.5,
-        "away_points": 28.0,
-        "home_win_prob": 0.397
+        "away_points": 27.9,
+        "home_win_prob": 0.408,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": []
     },
     {
       "game_id": "2026_03_LV_NO",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 16:25",
       "home": "NO",
       "away": "LV",
       "home_qb": "Tyler Shough",
       "away_qb": "Kirk Cousins",
       "model": {
-        "home_points": 22.6,
-        "away_points": 19.4,
-        "home_win_prob": 0.598,
+        "home_points": 23.0,
+        "away_points": 20.0,
+        "home_win_prob": 0.593,
         "fair_home_spread": -3.0,
-        "fair_total": 42.0,
-        "fair_home_ml": -149,
-        "fair_away_ml": 149,
+        "fair_total": 43.0,
+        "fair_home_ml": -145,
+        "fair_away_ml": 145,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0118
+            "prob": 0.0093
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0107
+            "prob": 0.0092
+          },
+          {
+            "home": 17,
+            "away": 20,
+            "prob": 0.0091
           },
           {
             "home": 20,
@@ -1120,136 +1202,163 @@
             "prob": 0.0086
           },
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0085
-          },
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0077
+            "home": 20,
+            "away": 13,
+            "prob": 0.0076
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.0
+        }
       },
       "market": {
         "home_spread": -3.0,
         "total": 43.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 23.1,
-        "away_points": 20.1,
-        "home_win_prob": 0.6
+        "home_points": 23.2,
+        "away_points": 20.2,
+        "home_win_prob": 0.61,
+        "situational_flags": []
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": []
     },
     {
       "game_id": "2026_03_LA_DEN",
-      "kickoff": "2026-09-27",
+      "kickoff": "2026-09-27 20:20",
       "home": "DEN",
       "away": "LA",
       "home_qb": "Bo Nix",
       "away_qb": "Matthew Stafford",
       "model": {
-        "home_points": 21.8,
-        "away_points": 23.0,
-        "home_win_prob": 0.462,
+        "home_points": 22.5,
+        "away_points": 23.7,
+        "home_win_prob": 0.459,
         "fair_home_spread": 2.0,
-        "fair_total": 44.0,
-        "fair_home_ml": 116,
-        "fair_away_ml": -116,
+        "fair_total": 46.0,
+        "fair_home_ml": 118,
+        "fair_away_ml": -118,
         "most_likely_scores": [
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0112
+            "home": 20,
+            "away": 23,
+            "prob": 0.0092
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0092
+            "prob": 0.0091
           },
           {
-            "home": 23,
+            "home": 17,
             "away": 20,
-            "prob": 0.0091
+            "prob": 0.0086
           },
           {
             "home": 24,
             "away": 27,
-            "prob": 0.0081
+            "prob": 0.0085
           },
           {
-            "home": 27,
-            "away": 24,
+            "home": 23,
+            "away": 20,
             "prob": 0.0074
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": 0.0,
+          "away": 0.02
+        }
       },
       "market": {
         "home_spread": 2.5,
         "total": 44.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 21.0,
-        "away_points": 23.5,
-        "home_win_prob": 0.427
+        "home_points": 20.9,
+        "away_points": 23.3,
+        "home_win_prob": 0.432,
+        "situational_flags": [
+          "primetime"
+        ]
       },
-      "advice": []
+      "advice": [],
+      "teaser_legs": [
+        {
+          "team": "DEN",
+          "teased_line": 8.5,
+          "game": "LA @ DEN",
+          "low_total": true,
+          "hist_leg_win": 0.771
+        }
+      ]
     },
     {
       "game_id": "2026_03_PHI_CHI",
-      "kickoff": "2026-09-28",
+      "kickoff": "2026-09-28 20:15",
       "home": "CHI",
       "away": "PHI",
       "home_qb": "Case Keenum",
       "away_qb": "Jalen Hurts",
       "model": {
-        "home_points": 19.7,
-        "away_points": 23.1,
-        "home_win_prob": 0.397,
+        "home_points": 21.2,
+        "away_points": 23.6,
+        "home_win_prob": 0.424,
         "fair_home_spread": 3.0,
-        "fair_total": 43.0,
-        "fair_home_ml": 152,
-        "fair_away_ml": -152,
+        "fair_total": 44.0,
+        "fair_home_ml": 136,
+        "fair_away_ml": -136,
         "most_likely_scores": [
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0121
-          },
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0099
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0091
+            "prob": 0.0105
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.008
+            "prob": 0.0096
           },
           {
-            "home": 13,
-            "away": 16,
-            "prob": 0.0075
+            "home": 20,
+            "away": 23,
+            "prob": 0.0094
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0089
+          },
+          {
+            "home": 27,
+            "away": 24,
+            "prob": 0.0076
           }
-        ]
+        ],
+        "qb_edge": {
+          "home": -0.199,
+          "away": 0.0
+        }
       },
       "market": {
         "home_spread": 4.5,
         "total": 41.5,
         "source": "nflverse posted line"
       },
+      "weather_forecast": {},
       "betting_view": {
-        "home_points": 18.6,
-        "away_points": 23.0,
-        "home_win_prob": 0.369
+        "home_points": 18.5,
+        "away_points": 22.8,
+        "home_win_prob": 0.368,
+        "situational_flags": [
+          "primetime"
+        ]
       },
       "advice": [
         {
@@ -1257,15 +1366,16 @@
           "market": "spread",
           "selection": "CHI +4.5",
           "price": 100.0,
-          "model_prob": 0.5300520377466653,
+          "model_prob": 0.5324594050550486,
           "break_even": 0.5,
-          "edge": 0.030052037746665317,
-          "ev_per_unit": 0.06010407549333063,
-          "kelly_stake": 0.005026018873332649,
+          "edge": 0.03245940505504863,
+          "ev_per_unit": 0.06491881011009726,
+          "kelly_stake": 0.006229702527524306,
           "grade": "C",
           "book": "posted"
         }
-      ]
+      ],
+      "teaser_legs": []
     }
   ]
 }
