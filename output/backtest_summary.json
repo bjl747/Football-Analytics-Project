@@ -1,0 +1,124 @@
+{
+  "blend_weights": {
+    "margin": 0.07293884870567853,
+    "total": 0.12817789149530312
+  },
+  "stacker": {
+    "intercept": 1.406576627642476,
+    "pts_pred": 0.1974080700108575,
+    "mkt_pred": 0.7356906819273312,
+    "epa_pred": 4.795993747469046,
+    "qb_edge": 16.933114007501576,
+    "opp_qb_edge": 6.638434909103364,
+    "is_home": -0.0019942721903623813,
+    "rest_edge": 0.03755860747248587,
+    "wind": -0.06428894744566861,
+    "is_dome": 1.4325169623793064,
+    "early": 0.3817116931908371
+  },
+  "pure_model": {
+    "games": 855,
+    "margin_mae_model": 10.212496616911523,
+    "margin_mae_market": 9.785964912280702,
+    "total_mae_model": 10.323037002920255,
+    "total_mae_market": 10.119883040935672,
+    "corr_model_vs_market_spread": 0.8924108254023712,
+    "brier_model": 0.22105792791582216,
+    "brier_market": 0.2101723066031448,
+    "logloss_model": 0.632566405209842,
+    "logloss_market": 0.6077253038279699,
+    "bets": {
+      "all": {
+        "n": 1389,
+        "win_rate": 0.42669584245076586,
+        "roi_flat": -0.08967582696679888,
+        "units_flat": -124.55972365688365,
+        "kelly_growth": -0.9816419419055173
+      },
+      "moneyline": {
+        "n": 481,
+        "win_rate": 0.31875,
+        "roi_flat": -0.12527858606013312,
+        "units_flat": -60.25899989492403,
+        "kelly_growth": -0.8746666121731371
+      },
+      "spread": {
+        "n": 475,
+        "win_rate": 0.4653679653679654,
+        "roi_flat": -0.1051740795984723,
+        "units_flat": -49.95768780927435,
+        "kelly_growth": -0.7481764169059606
+      },
+      "total": {
+        "n": 433,
+        "win_rate": 0.5058275058275058,
+        "roi_flat": -0.03312479434800291,
+        "units_flat": -14.343035952685259,
+        "kelly_growth": -0.4183475499383216
+      }
+    },
+    "by_season": {
+      "2023": {
+        "margin_mae_model": 10.31749110839497,
+        "margin_mae_market": 9.98421052631579
+      },
+      "2024": {
+        "margin_mae_model": 10.132433091590261,
+        "margin_mae_market": 9.703508771929824
+      },
+      "2025": {
+        "margin_mae_model": 10.187565650749336,
+        "margin_mae_market": 9.670175438596491
+      }
+    }
+  },
+  "market_blend": {
+    "games": 855,
+    "margin_mae_model": 9.7966949308428,
+    "margin_mae_market": 9.785964912280702,
+    "total_mae_model": 10.123255724370114,
+    "total_mae_market": 10.119883040935672,
+    "corr_model_vs_market_spread": 0.9996359352254159,
+    "brier_model": 0.2105960644442507,
+    "brier_market": 0.2101723066031448,
+    "logloss_model": 0.6084842202548748,
+    "logloss_market": 0.6077253038279699,
+    "bets": {
+      "all": {
+        "n": 76,
+        "win_rate": 0.3684210526315789,
+        "roi_flat": -0.017369083731312827,
+        "units_flat": -1.320050363579775,
+        "kelly_growth": 0.005200444922806469
+      },
+      "moneyline": {
+        "n": 45,
+        "win_rate": 0.24444444444444444,
+        "roi_flat": -0.07909465020576133,
+        "units_flat": -3.55925925925926,
+        "kelly_growth": -0.017229267802696513
+      },
+      "spread": {
+        "n": 31,
+        "win_rate": 0.5483870967741935,
+        "roi_flat": 0.07223254502191884,
+        "units_flat": 2.239208895679484,
+        "kelly_growth": 0.022822935187898796
+      }
+    },
+    "by_season": {
+      "2023": {
+        "margin_mae_model": 9.997097432851136,
+        "margin_mae_market": 9.98421052631579
+      },
+      "2024": {
+        "margin_mae_model": 9.707418070063968,
+        "margin_mae_market": 9.703508771929824
+      },
+      "2025": {
+        "margin_mae_model": 9.68556928961329,
+        "margin_mae_market": 9.670175438596491
+      }
+    }
+  }
+}
