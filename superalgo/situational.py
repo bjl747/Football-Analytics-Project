@@ -60,3 +60,29 @@ def wong_teaser_legs(home: str, away: str, spread_line: float, total_line: float
         leg["low_total"] = bool(total_line is not None and total_line <= 49)
         leg["hist_leg_win"] = 0.771 if leg["low_total"] else 0.755
     return legs
+
+
+# Experiment 9: when the pure model disagrees with the opening line, the line tends
+# to move toward the model before kickoff. Holdout 2024-25 figures, using ONLY
+# information available when lines open (no same-week QB/injury news):
+#   |gap| >= 1.5 -> 58.8% move our way (+0.46 pts);  |gap| >= 3 -> 62.2% (+0.48 pts)
+# When fresh QB/injury news is in the model before the books react, it rises to
+# 69.5% / 79.3% (+1.1 / +1.7 pts): a speed edge.
+LINE_MOVE_TABLE = [(3.0, 0.62, 0.5), (1.5, 0.59, 0.46)]
+
+
+def line_move_signal(home: str, away: str, model_margin: float, current_spread: float) -> dict | None:
+    """Tell the bettor whether to bet NOW (before the line moves) or wait.
+
+    model_margin / current_spread: expected home margin (+ = home favoured).
+    """
+    if current_spread is None or np.isnan(current_spread):
+        return None
+    gap = model_margin - current_spread
+    for k, p, pts in LINE_MOVE_TABLE:
+        if abs(gap) >= k:
+            side = home if gap > 0 else away
+            return {"bet_now_on": side, "model_minus_line": round(float(gap), 1),
+                    "hist_prob_line_moves_our_way": p, "hist_avg_points_gained": pts,
+                    "note": "Edge comes from betting before the line moves; it fades by kickoff."}
+    return None

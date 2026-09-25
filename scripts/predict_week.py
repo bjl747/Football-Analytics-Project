@@ -27,9 +27,10 @@ from superalgo import market as M  # noqa: E402
 from superalgo.advice import Bet, evaluate_markets, recommend  # noqa: E402
 from superalgo.engine import blend_projection  # noqa: E402
 from superalgo.odds import prob_to_american  # noqa: E402
+from superalgo.news import fetch_injuries, qb_alerts  # noqa: E402
 from superalgo.pipeline import GamePredictor  # noqa: E402
 from superalgo.simulate import GameSimulator  # noqa: E402
-from superalgo.situational import adjustments, wong_teaser_legs  # noqa: E402
+from superalgo.situational import adjustments, line_move_signal, wong_teaser_legs  # noqa: E402
 from superalgo.weather import game_weather  # noqa: E402
 
 # model weight vs market line (holdout-measured; see RESEARCH_LOG)
@@ -78,11 +79,26 @@ def main():
     ap.add_argument("--sims", type=int, default=20000)
     ap.add_argument("--min-edge", type=float, default=0.03)
     ap.add_argument("--no-weather", action="store_true")
+    ap.add_argument("--no-news", action="store_true")
     a = ap.parse_args()
 
     gp = GamePredictor().build(a.season).fit()
     wk = gp.predict(a.season, a.week)
     sim = GameSimulator()
+
+    # late-breaking QB news (ESPN injury feed): shift projections before the books do
+    news = {}
+    if not a.no_news:
+        try:
+            for al in qb_alerts(wk, fetch_injuries(), gp.qbg, a.season, a.week):
+                news.setdefault(al["game"], []).append(al)
+        except Exception as e:  # noqa: BLE001
+            print("news feed unavailable:", e)
+    for idx, r in wk.iterrows():
+        for al in news.get(f"{r.away_team} @ {r.home_team}", []):
+            wk.at[idx, "pred_margin"] += al["home_margin_shift"]
+            wk.at[idx, "home_exp"] += al["home_margin_shift"] / 2
+            wk.at[idx, "away_exp"] -= al["home_margin_shift"] / 2
 
     live = None
     if os.environ.get("ODDS_API_KEY"):
@@ -142,7 +158,9 @@ def main():
             "weather_forecast": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in wx.items()},
             "betting_view": {"home_points": round((t_ + m_) / 2, 1), "away_points": round((t_ - m_) / 2, 1),
                              "home_win_prob": round(bet_sim.p_home_win(), 3), "situational_flags": adj["flags"]},
+            "news_alerts": news.get(f"{r.away_team} @ {r.home_team}", []),
             "advice": advice[:3],
+            "early_line_signal": line_move_signal(r.home_team, r.away_team, r.pred_margin, spread),
             "teaser_legs": wong_teaser_legs(r.home_team, r.away_team, spread, total),
         })
 
@@ -157,7 +175,8 @@ def main():
         m = gm["model"]
         print(f'{gm["away"]:>4} @ {gm["home"]:<4} {m["away_points"]:>5}-{m["home_points"]:<5} P(home)={m["home_win_prob"]:.2f} '
               f'fair {m["fair_home_spread"]:+.1f} mkt {gm["market"]["home_spread"]} | {gm["betting_view"]["situational_flags"]} '
-              f'| {[b["selection"] + " " + b["grade"] for b in gm["advice"]] or "-"} | teaser {[l["team"] for l in gm["teaser_legs"]]}')
+              f'| {[b["selection"] + " " + b["grade"] for b in gm["advice"]] or "-"} | teaser {[l["team"] for l in gm["teaser_legs"]]}'
+              f' | early: {(gm["early_line_signal"] or {}).get("bet_now_on", "-")}')
 
 
 if __name__ == "__main__":

@@ -96,11 +96,41 @@ That's an upper bound, because bettors only have the forecast. Experiment 7 belo
 The best model weight for weeks 1–4 was 6% in 2012–2022 but 71% in 2023–2025; other week bands also flip.
 That's noise, not a pattern, so the engine keeps one fixed weight.
 
+## Experiment 9: predicting line movement ✅ Passed holdout (the strongest finding)
+
+When the pure v2 model disagrees with the **opening** line, the line tends to move toward the model before kickoff.
+We ran it two ways, because QB starters and final injury reports aren't known when lines open.
+
+**A. Only information available at the open** (ratings, rest, travel; no same-week news):
+
+| Model − opening line | Dev 2012–21: moves our way | Avg points gained | Holdout 2024–25: moves our way | Avg points gained |
+|---|---|---|---|---|
+| any | 58.6% | +0.51 | 53.3% | +0.20 |
+| ≥ 1.5 pts | 63.2% | +0.82 | 58.8% | +0.46 |
+| ≥ 3 pts | 66.7% | +1.43 | 62.2% | +0.48 |
+
+**B. Including same-week QB changes and injury reports** (a "speed" edge: the model reprices the moment news
+breaks, and the bettor must act before the books move):
+
+| Model − opening line | Dev: moves our way | Avg points gained | Holdout: moves our way | Avg points gained |
+|---|---|---|---|---|
+| ≥ 1.5 pts | 69.9% | +1.28 | 69.5% | +1.07 |
+| ≥ 3 pts | 76.8% | +2.30 | 79.3% | +1.68 |
+
+Beating the closing number ("closing line value", CLV) is the standard professional measure of skill.
+It's far less noisy than win/loss records (Buchdahl). So the engine's edges are **timing** (bet at the open when
+it disagrees) and **speed** (reprice instantly on news). By kickoff the market has usually caught up (Experiments 2–3).
+
+**Caveats:** the ESPN feed's "open" time isn't documented, and B depends on how fast news reaches the engine.
+Recording our own time-stamped line snapshots is the next validation step.
+
 ## What this means for betting
 
 1. **Against NFL closing spreads, public-data models have no reliable edge in recent seasons.** Our improvements make the *predictions* better, but the closing line already knows what we know. The engine therefore leans on the market (90% market, 10% model) for spreads.
 2. **The edges that survived** are structural: bye-week favourites, teasers through key numbers, primetime and wind unders, and line shopping across books.
-3. **Early lines are where a model can beat the market.** The engine predicts line movement, but the recent holdout says it isn't enough yet. We need our own opening-line history to keep testing, which is free with daily ESPN/Kalshi snapshots.
+3. **Early lines and fast news are where the model beats the market.** Betting at the open earns about
+   +0.5 points of closing line value on the holdout. Reacting instantly to QB and injury news earns +1 to +1.7
+   (Experiment 9). Weekly output includes an `early_line_signal`.
 4. **College football is likely softer**, per the research (thin Group-of-Five markets). It needs the CFBD key.
 
 ## Ideas queued for the next rounds

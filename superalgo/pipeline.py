@@ -139,6 +139,7 @@ class GamePredictor:
         stats = pd.concat([team_game_stats(p) for p in pbp.values()])
         qbg = pd.concat([qb_game_table(p) for p in pbp.values()])
         qbg["team"] = qbg["team"].map(canon)
+        self.qbg = qbg
         games = _games(seasons)
         kp = kalman_predictions(team_game_table(games, stats))
         inj_seasons = [s for s in seasons if s >= 2012]

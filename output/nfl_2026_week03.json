@@ -3,7 +3,7 @@
   "season": 2026,
   "week": 3,
   "engine": "v2 (Kalman)",
-  "generated_utc": "2026-09-25T01:40:18+00:00",
+  "generated_utc": "2026-09-25T02:17:14+00:00",
   "power_index": [
     {
       "team": "DET",
@@ -303,38 +303,38 @@
       "home_qb": "Jordan Love",
       "away_qb": "Michael Penix Jr.",
       "model": {
-        "home_points": 24.8,
+        "home_points": 24.7,
         "away_points": 20.5,
-        "home_win_prob": 0.63,
+        "home_win_prob": 0.627,
         "fair_home_spread": -3.0,
-        "fair_total": 45.0,
-        "fair_home_ml": -170,
-        "fair_away_ml": 170,
+        "fair_total": 44.0,
+        "fair_home_ml": -168,
+        "fair_away_ml": 168,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0112
+            "prob": 0.0104
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0086
+            "prob": 0.0103
           },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0084
+            "prob": 0.0082
+          },
+          {
+            "home": 27,
+            "away": 20,
+            "prob": 0.0077
           },
           {
             "home": 27,
             "away": 24,
-            "prob": 0.0081
-          },
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0078
+            "prob": 0.0077
           }
         ],
         "qb_edge": {
@@ -351,12 +351,14 @@
       "betting_view": {
         "home_points": 23.8,
         "away_points": 19.4,
-        "home_win_prob": 0.644,
+        "home_win_prob": 0.642,
         "situational_flags": [
           "primetime"
         ]
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": []
     },
     {
@@ -367,38 +369,38 @@
       "home_qb": "Josh Allen",
       "away_qb": "Justin Herbert",
       "model": {
-        "home_points": 27.9,
-        "away_points": 20.3,
-        "home_win_prob": 0.721,
-        "fair_home_spread": -7.0,
+        "home_points": 27.8,
+        "away_points": 20.4,
+        "home_win_prob": 0.716,
+        "fair_home_spread": -6.0,
         "fair_total": 48.0,
-        "fair_home_ml": -259,
-        "fair_away_ml": 259,
+        "fair_home_ml": -252,
+        "fair_away_ml": 252,
         "most_likely_scores": [
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0085
+          },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0088
+            "prob": 0.0078
           },
           {
             "home": 27,
             "away": 24,
-            "prob": 0.0078
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0078
+            "prob": 0.0077
           },
           {
             "home": 27,
             "away": 20,
-            "prob": 0.0066
+            "prob": 0.0074
           },
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0062
+            "home": 30,
+            "away": 27,
+            "prob": 0.0069
           }
         ],
         "qb_edge": {
@@ -415,10 +417,12 @@
       "betting_view": {
         "home_points": 28.7,
         "away_points": 21.7,
-        "home_win_prob": 0.716,
+        "home_win_prob": 0.721,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": []
     },
     {
@@ -429,38 +433,38 @@
       "home_qb": "Deshaun Watson",
       "away_qb": "Bryce Young",
       "model": {
-        "home_points": 19.6,
+        "home_points": 19.5,
         "away_points": 21.4,
-        "home_win_prob": 0.446,
+        "home_win_prob": 0.44,
         "fair_home_spread": 3.0,
         "fair_total": 40.0,
-        "fair_home_ml": 124,
-        "fair_away_ml": -124,
+        "fair_home_ml": 127,
+        "fair_away_ml": -127,
         "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0115
-          },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0102
+            "prob": 0.0133
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.01
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0096
+            "prob": 0.0098
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0088
+            "prob": 0.0095
           },
           {
-            "home": 13,
-            "away": 16,
-            "prob": 0.0077
+            "home": 10,
+            "away": 13,
+            "prob": 0.0086
           }
         ],
         "qb_edge": {
@@ -477,10 +481,12 @@
       "betting_view": {
         "home_points": 20.0,
         "away_points": 22.4,
-        "home_win_prob": 0.428,
+        "home_win_prob": 0.429,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": [
         {
           "team": "CLE",
@@ -501,36 +507,36 @@
       "model": {
         "home_points": 29.6,
         "away_points": 19.9,
-        "home_win_prob": 0.77,
+        "home_win_prob": 0.772,
         "fair_home_spread": -8.0,
         "fair_total": 49.0,
-        "fair_home_ml": -334,
-        "fair_away_ml": 334,
+        "fair_home_ml": -338,
+        "fair_away_ml": 338,
         "most_likely_scores": [
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0092
+            "prob": 0.0084
           },
           {
             "home": 27,
             "away": 24,
-            "prob": 0.0081
+            "prob": 0.0082
           },
           {
             "home": 20,
-            "away": 17,
-            "prob": 0.0069
+            "away": 13,
+            "prob": 0.0061
+          },
+          {
+            "home": 27,
+            "away": 20,
+            "prob": 0.006
           },
           {
             "home": 30,
             "away": 27,
-            "prob": 0.0068
-          },
-          {
-            "home": 27,
-            "away": 13,
-            "prob": 0.0064
+            "prob": 0.0058
           }
         ],
         "qb_edge": {
@@ -547,10 +553,18 @@
       "betting_view": {
         "home_points": 27.2,
         "away_points": 20.4,
-        "home_win_prob": 0.712,
+        "home_win_prob": 0.716,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": {
+        "bet_now_on": "DET",
+        "model_minus_line": 2.5,
+        "hist_prob_line_moves_our_way": 0.59,
+        "hist_avg_points_gained": 0.46,
+        "note": "Edge comes from betting before the line moves; it fades by kickoff."
+      },
       "teaser_legs": []
     },
     {
@@ -561,18 +575,23 @@
       "home_qb": "Daniel Jones",
       "away_qb": "C.J. Stroud",
       "model": {
-        "home_points": 21.0,
-        "away_points": 22.9,
-        "home_win_prob": 0.44,
+        "home_points": 20.9,
+        "away_points": 22.7,
+        "home_win_prob": 0.445,
         "fair_home_spread": 3.0,
         "fair_total": 43.0,
-        "fair_home_ml": 127,
-        "fair_away_ml": -127,
+        "fair_home_ml": 124,
+        "fair_away_ml": -124,
         "most_likely_scores": [
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0111
+            "home": 20,
+            "away": 23,
+            "prob": 0.0107
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0097
           },
           {
             "home": 23,
@@ -580,19 +599,14 @@
             "prob": 0.0095
           },
           {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0093
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.009
+            "home": 17,
+            "away": 20,
+            "prob": 0.0094
           },
           {
             "home": 24,
             "away": 27,
-            "prob": 0.008
+            "prob": 0.0073
           }
         ],
         "qb_edge": {
@@ -609,10 +623,12 @@
       "betting_view": {
         "home_points": 20.5,
         "away_points": 22.1,
-        "home_win_prob": 0.454,
+        "home_win_prob": 0.461,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": [
         {
           "team": "IND",
@@ -631,38 +647,38 @@
       "home_qb": "Trevor Lawrence",
       "away_qb": "Drake Maye",
       "model": {
-        "home_points": 23.4,
-        "away_points": 22.1,
-        "home_win_prob": 0.54,
+        "home_points": 23.2,
+        "away_points": 22.2,
+        "home_win_prob": 0.536,
         "fair_home_spread": -2.0,
         "fair_total": 45.0,
-        "fair_home_ml": -117,
-        "fair_away_ml": 117,
+        "fair_home_ml": -115,
+        "fair_away_ml": 115,
         "most_likely_scores": [
           {
-            "home": 20,
-            "away": 17,
-            "prob": 0.01
-          },
-          {
-            "home": 23,
+            "home": 17,
             "away": 20,
-            "prob": 0.0092
+            "prob": 0.0096
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0088
+            "prob": 0.0095
           },
           {
-            "home": 17,
+            "home": 20,
+            "away": 17,
+            "prob": 0.0092
+          },
+          {
+            "home": 23,
             "away": 20,
-            "prob": 0.0087
+            "prob": 0.0089
           },
           {
-            "home": 24,
-            "away": 27,
-            "prob": 0.0074
+            "home": 27,
+            "away": 24,
+            "prob": 0.0082
           }
         ],
         "qb_edge": {
@@ -679,10 +695,18 @@
       "betting_view": {
         "home_points": 24.1,
         "away_points": 21.4,
-        "home_win_prob": 0.593,
+        "home_win_prob": 0.592,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": {
+        "bet_now_on": "NE",
+        "model_minus_line": -2.2,
+        "hist_prob_line_moves_our_way": 0.59,
+        "hist_avg_points_gained": 0.46,
+        "note": "Edge comes from betting before the line moves; it fades by kickoff."
+      },
       "teaser_legs": []
     },
     {
@@ -702,29 +726,29 @@
         "fair_away_ml": -191,
         "most_likely_scores": [
           {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0112
-          },
-          {
             "home": 17,
             "away": 20,
-            "prob": 0.0104
+            "prob": 0.0102
           },
           {
             "home": 20,
-            "away": 17,
-            "prob": 0.0079
+            "away": 23,
+            "prob": 0.0087
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0079
+            "prob": 0.0083
           },
           {
             "home": 24,
             "away": 27,
-            "prob": 0.0076
+            "prob": 0.0079
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0071
           }
         ],
         "qb_edge": {
@@ -741,10 +765,18 @@
       "betting_view": {
         "home_points": 17.7,
         "away_points": 27.7,
-        "home_win_prob": 0.211,
+        "home_win_prob": 0.212,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": {
+        "bet_now_on": "MIA",
+        "model_minus_line": 5.3,
+        "hist_prob_line_moves_our_way": 0.62,
+        "hist_avg_points_gained": 0.5,
+        "note": "Edge comes from betting before the line moves; it fades by kickoff."
+      },
       "teaser_legs": []
     },
     {
@@ -755,38 +787,38 @@
       "home_qb": "Jameis Winston",
       "away_qb": "Cam Ward",
       "model": {
-        "home_points": 24.4,
+        "home_points": 24.7,
         "away_points": 19.8,
-        "home_win_prob": 0.646,
+        "home_win_prob": 0.65,
         "fair_home_spread": -4.0,
         "fair_total": 44.0,
-        "fair_home_ml": -182,
-        "fair_away_ml": 182,
+        "fair_home_ml": -185,
+        "fair_away_ml": 185,
         "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0107
-          },
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0083
-          },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.008
+            "prob": 0.0102
           },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0077
+            "prob": 0.0098
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0083
           },
           {
             "home": 16,
             "away": 13,
-            "prob": 0.0072
+            "prob": 0.007
+          },
+          {
+            "home": 27,
+            "away": 24,
+            "prob": 0.0067
           }
         ],
         "qb_edge": {
@@ -803,10 +835,18 @@
       "betting_view": {
         "home_points": 20.7,
         "away_points": 18.0,
-        "home_win_prob": 0.592,
+        "home_win_prob": 0.591,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": {
+        "bet_now_on": "NYG",
+        "model_minus_line": 2.1,
+        "hist_prob_line_moves_our_way": 0.59,
+        "hist_avg_points_gained": 0.46,
+        "note": "Edge comes from betting before the line moves; it fades by kickoff."
+      },
       "teaser_legs": [
         {
           "team": "TEN",
@@ -825,38 +865,38 @@
       "home_qb": "Aaron Rodgers",
       "away_qb": "Joe Burrow",
       "model": {
-        "home_points": 22.4,
-        "away_points": 21.9,
-        "home_win_prob": 0.512,
+        "home_points": 22.5,
+        "away_points": 21.8,
+        "home_win_prob": 0.52,
         "fair_home_spread": -1.0,
         "fair_total": 44.0,
-        "fair_home_ml": -105,
-        "fair_away_ml": 105,
+        "fair_home_ml": -108,
+        "fair_away_ml": 108,
         "most_likely_scores": [
           {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0105
+            "home": 17,
+            "away": 20,
+            "prob": 0.0096
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0099
+            "prob": 0.0093
           },
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0091
+            "home": 27,
+            "away": 24,
+            "prob": 0.0085
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0083
+            "prob": 0.0084
           },
           {
-            "home": 24,
-            "away": 27,
-            "prob": 0.0081
+            "home": 20,
+            "away": 23,
+            "prob": 0.0077
           }
         ],
         "qb_edge": {
@@ -873,10 +913,18 @@
       "betting_view": {
         "home_points": 19.7,
         "away_points": 22.8,
-        "home_win_prob": 0.406,
+        "home_win_prob": 0.402,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": {
+        "bet_now_on": "PIT",
+        "model_minus_line": 3.9,
+        "hist_prob_line_moves_our_way": 0.62,
+        "hist_avg_points_gained": 0.5,
+        "note": "Edge comes from betting before the line moves; it fades by kickoff."
+      },
       "teaser_legs": []
     },
     {
@@ -887,38 +935,38 @@
       "home_qb": "Jayden Daniels",
       "away_qb": "Drew Lock",
       "model": {
-        "home_points": 19.8,
-        "away_points": 24.9,
-        "home_win_prob": 0.345,
-        "fair_home_spread": 4.0,
+        "home_points": 18.1,
+        "away_points": 26.8,
+        "home_win_prob": 0.248,
+        "fair_home_spread": 7.0,
         "fair_total": 44.0,
-        "fair_home_ml": 190,
-        "fair_away_ml": -190,
+        "fair_home_ml": 304,
+        "fair_away_ml": -304,
         "most_likely_scores": [
-          {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0103
-          },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0098
+            "prob": 0.0109
+          },
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0101
+          },
+          {
+            "home": 20,
+            "away": 27,
+            "prob": 0.007
           },
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0079
+            "prob": 0.0068
           },
           {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0079
-          },
-          {
-            "home": 24,
+            "home": 13,
             "away": 27,
-            "prob": 0.0079
+            "prob": 0.0066
           }
         ],
         "qb_edge": {
@@ -933,26 +981,24 @@
       },
       "weather_forecast": {},
       "betting_view": {
-        "home_points": 16.7,
-        "away_points": 24.0,
-        "home_win_prob": 0.28,
+        "home_points": 16.6,
+        "away_points": 24.1,
+        "home_win_prob": 0.263,
         "situational_flags": []
       },
-      "advice": [
+      "news_alerts": [
         {
           "game": "SEA @ WAS",
-          "market": "spread",
-          "selection": "WAS +7.5",
-          "price": -112.0,
-          "model_prob": 0.5615213971496349,
-          "break_even": 0.5283018867924528,
-          "edge": 0.03321951035718207,
-          "ev_per_unit": 0.06287978746180889,
-          "kelly_stake": 0.007006340489306471,
-          "grade": "C",
-          "book": "posted"
+          "team": "WAS",
+          "qb": "Jayden Daniels",
+          "status": "Out",
+          "updated": "2026-09-23T16:55Z",
+          "home_margin_shift": -3.1,
+          "note": "Commanders head coach Dan Quinn confirmed that Daniels will be out for Sunday's game against the Seahawks, but the quarterback remains without a precise timeline for a return while he continues to receive more medical opinions on his left elbow injury, Ben Standig of The Team 980 Washington D.C. reports."
         }
       ],
+      "advice": [],
+      "early_line_signal": null,
       "teaser_legs": [
         {
           "team": "SEA",
@@ -971,38 +1017,38 @@
       "home_qb": "Brock Purdy",
       "away_qb": "Jacoby Brissett",
       "model": {
-        "home_points": 27.6,
+        "home_points": 27.7,
         "away_points": 18.6,
-        "home_win_prob": 0.76,
+        "home_win_prob": 0.757,
         "fair_home_spread": -7.0,
         "fair_total": 46.0,
-        "fair_home_ml": -316,
-        "fair_away_ml": 316,
+        "fair_home_ml": -312,
+        "fair_away_ml": 312,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0096
+            "prob": 0.0099
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0088
-          },
-          {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0077
+            "prob": 0.0086
           },
           {
             "home": 27,
             "away": 20,
-            "prob": 0.0064
+            "prob": 0.0069
           },
           {
-            "home": 27,
+            "home": 24,
+            "away": 17,
+            "prob": 0.0067
+          },
+          {
+            "home": 20,
             "away": 13,
-            "prob": 0.0062
+            "prob": 0.0063
           }
         ],
         "qb_edge": {
@@ -1022,7 +1068,9 @@
         "home_win_prob": 0.761,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": [
         {
           "team": "SF",
@@ -1043,34 +1091,34 @@
       "model": {
         "home_points": 20.7,
         "away_points": 22.4,
-        "home_win_prob": 0.444,
-        "fair_home_spread": 3.0,
+        "home_win_prob": 0.446,
+        "fair_home_spread": 2.0,
         "fair_total": 43.0,
-        "fair_home_ml": 125,
-        "fair_away_ml": -125,
+        "fair_home_ml": 124,
+        "fair_away_ml": -124,
         "most_likely_scores": [
           {
             "home": 20,
-            "away": 23,
-            "prob": 0.0105
-          },
-          {
-            "home": 20,
             "away": 17,
-            "prob": 0.0095
-          },
-          {
-            "home": 17,
-            "away": 20,
-            "prob": 0.0089
+            "prob": 0.0099
           },
           {
             "home": 24,
             "away": 27,
-            "prob": 0.0089
+            "prob": 0.0094
+          },
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0093
           },
           {
             "home": 23,
+            "away": 20,
+            "prob": 0.0091
+          },
+          {
+            "home": 17,
             "away": 20,
             "prob": 0.0083
           }
@@ -1089,10 +1137,12 @@
       "betting_view": {
         "home_points": 20.5,
         "away_points": 22.0,
-        "home_win_prob": 0.46,
+        "home_win_prob": 0.463,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": [
         {
           "team": "TB",
@@ -1113,36 +1163,36 @@
       "model": {
         "home_points": 24.0,
         "away_points": 25.9,
-        "home_win_prob": 0.44,
+        "home_win_prob": 0.447,
         "fair_home_spread": 3.0,
-        "fair_total": 49.0,
-        "fair_home_ml": 127,
-        "fair_away_ml": -127,
+        "fair_total": 50.0,
+        "fair_home_ml": 124,
+        "fair_away_ml": -124,
         "most_likely_scores": [
           {
-            "home": 17,
-            "away": 20,
-            "prob": 0.009
-          },
-          {
-            "home": 23,
-            "away": 20,
-            "prob": 0.0086
+            "home": 27,
+            "away": 30,
+            "prob": 0.0088
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0085
+            "prob": 0.0087
+          },
+          {
+            "home": 23,
+            "away": 20,
+            "prob": 0.0087
           },
           {
             "home": 24,
             "away": 27,
-            "prob": 0.008
+            "prob": 0.0075
           },
           {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0075
+            "home": 17,
+            "away": 20,
+            "prob": 0.0072
           }
         ],
         "qb_edge": {
@@ -1159,10 +1209,12 @@
       "betting_view": {
         "home_points": 24.5,
         "away_points": 27.9,
-        "home_win_prob": 0.408,
+        "home_win_prob": 0.403,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": []
     },
     {
@@ -1173,38 +1225,38 @@
       "home_qb": "Tyler Shough",
       "away_qb": "Kirk Cousins",
       "model": {
-        "home_points": 23.0,
+        "home_points": 23.1,
         "away_points": 20.0,
-        "home_win_prob": 0.593,
+        "home_win_prob": 0.601,
         "fair_home_spread": -3.0,
         "fair_total": 43.0,
-        "fair_home_ml": -145,
-        "fair_away_ml": 145,
+        "fair_home_ml": -150,
+        "fair_away_ml": 150,
         "most_likely_scores": [
           {
             "home": 20,
             "away": 17,
-            "prob": 0.0093
+            "prob": 0.0118
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0092
+            "prob": 0.0099
           },
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0091
+            "prob": 0.0093
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0086
+            "prob": 0.0084
           },
           {
-            "home": 20,
-            "away": 13,
-            "prob": 0.0076
+            "home": 27,
+            "away": 24,
+            "prob": 0.0079
           }
         ],
         "qb_edge": {
@@ -1221,10 +1273,12 @@
       "betting_view": {
         "home_points": 23.2,
         "away_points": 20.2,
-        "home_win_prob": 0.61,
+        "home_win_prob": 0.606,
         "situational_flags": []
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": []
     },
     {
@@ -1235,38 +1289,38 @@
       "home_qb": "Bo Nix",
       "away_qb": "Matthew Stafford",
       "model": {
-        "home_points": 22.5,
-        "away_points": 23.7,
-        "home_win_prob": 0.459,
+        "home_points": 22.4,
+        "away_points": 23.8,
+        "home_win_prob": 0.458,
         "fair_home_spread": 2.0,
         "fair_total": 46.0,
         "fair_home_ml": 118,
         "fair_away_ml": -118,
         "most_likely_scores": [
           {
-            "home": 20,
-            "away": 23,
-            "prob": 0.0092
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0091
-          },
-          {
             "home": 17,
             "away": 20,
-            "prob": 0.0086
+            "prob": 0.0098
+          },
+          {
+            "home": 20,
+            "away": 23,
+            "prob": 0.0093
           },
           {
             "home": 24,
             "away": 27,
-            "prob": 0.0085
+            "prob": 0.009
+          },
+          {
+            "home": 20,
+            "away": 17,
+            "prob": 0.0089
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0074
+            "prob": 0.0085
           }
         ],
         "qb_edge": {
@@ -1283,12 +1337,14 @@
       "betting_view": {
         "home_points": 20.9,
         "away_points": 23.3,
-        "home_win_prob": 0.432,
+        "home_win_prob": 0.437,
         "situational_flags": [
           "primetime"
         ]
       },
+      "news_alerts": [],
       "advice": [],
+      "early_line_signal": null,
       "teaser_legs": [
         {
           "team": "DEN",
@@ -1307,38 +1363,38 @@
       "home_qb": "Case Keenum",
       "away_qb": "Jalen Hurts",
       "model": {
-        "home_points": 21.2,
+        "home_points": 21.3,
         "away_points": 23.6,
-        "home_win_prob": 0.424,
+        "home_win_prob": 0.427,
         "fair_home_spread": 3.0,
         "fair_total": 44.0,
-        "fair_home_ml": 136,
-        "fair_away_ml": -136,
+        "fair_home_ml": 134,
+        "fair_away_ml": -134,
         "most_likely_scores": [
           {
             "home": 17,
             "away": 20,
-            "prob": 0.0105
-          },
-          {
-            "home": 20,
-            "away": 17,
-            "prob": 0.0096
+            "prob": 0.0103
           },
           {
             "home": 20,
             "away": 23,
-            "prob": 0.0094
+            "prob": 0.0097
+          },
+          {
+            "home": 24,
+            "away": 27,
+            "prob": 0.0087
           },
           {
             "home": 23,
             "away": 20,
-            "prob": 0.0089
+            "prob": 0.0086
           },
           {
-            "home": 27,
-            "away": 24,
-            "prob": 0.0076
+            "home": 20,
+            "away": 17,
+            "prob": 0.0079
           }
         ],
         "qb_edge": {
@@ -1355,26 +1411,34 @@
       "betting_view": {
         "home_points": 18.5,
         "away_points": 22.8,
-        "home_win_prob": 0.368,
+        "home_win_prob": 0.369,
         "situational_flags": [
           "primetime"
         ]
       },
+      "news_alerts": [],
       "advice": [
         {
           "game": "PHI @ CHI",
           "market": "spread",
           "selection": "CHI +4.5",
           "price": 100.0,
-          "model_prob": 0.5324594050550486,
+          "model_prob": 0.5364587246497026,
           "break_even": 0.5,
-          "edge": 0.03245940505504863,
-          "ev_per_unit": 0.06491881011009726,
-          "kelly_stake": 0.006229702527524306,
+          "edge": 0.03645872464970257,
+          "ev_per_unit": 0.07291744929940513,
+          "kelly_stake": 0.008229362324851275,
           "grade": "C",
           "book": "posted"
         }
       ],
+      "early_line_signal": {
+        "bet_now_on": "CHI",
+        "model_minus_line": 1.9,
+        "hist_prob_line_moves_our_way": 0.59,
+        "hist_avg_points_gained": 0.46,
+        "note": "Edge comes from betting before the line moves; it fades by kickoff."
+      },
       "teaser_legs": []
     }
   ]
